@@ -1,0 +1,19 @@
+body{
+    margin: 0px;
+}
+.top-bar{
+    background:whitesmoke;
+    height: 49px;
+}
+.bar-content{
+    width: max-content;
+    height: max-content;
+    color:#868686;
+    font-family: ""
+}
+.weblogo{
+    height: 10px;
+    width: max-content;
+    display: block;
+    background-image:url(images/batlogo.png;)
+}
