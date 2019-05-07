@@ -74,9 +74,9 @@
         <dd>豆豆</dd>
     </dl>
     <hr>
-    <h3>"Chinese Google"搜索</h3>
-    <form action="https://www.baidu.com/s" target="_blank">
-        <input type="text" placeholder="请输入想要搜索的内容" name="wd" required>
+    <h3>Google搜索</h3>
+    <form action="https://www.Google.com/search" target="_blank">
+        <input type="text" placeholder="请输入想要搜索的内容" name="q" required>
         <button>在新窗口打开搜索结果</button>
     </form>
 
@@ -140,7 +140,65 @@
     </form>
     <hr>
     <br>
+    <table border="1">
+        <cption value="">货品列表</cption>
+        <colgroup>
+            <col>
+            <col bgcolor="red">
+        </colgroup>
+        <tr>
+            <thead>
+                <th>编号</th>
+                <th>品名</th>
+                <th>进价</th>
+                <th>出价</th>
+            </thead>
+        </tr>
+        <tr>
+            <td>001</td>
+            <td>苹果</td>
+            <td rowspan="2">5</td>
+            <td>8</td>
+        </tr>
+        <tr>
+            <td>001</td>
+            <td>桔子</td>
+            <td>8</td>
+        </tr>
+        <tr>
+            <td>001</td>
+            <td>香蕉</td>
+            <td>5</td>
+            <td>8</td>
+        </tr>
+        <tr>
+            <td>001</td>
+            <td>山竹</td>
+            <td>5</td>
+            <td>8</td>
+        </tr>
+    </table>
+    <hr>
+    <img src="../images/bird.jpg" width="300" alt="" usemap="#birdmap">
+    <map name="birdmap">
+        <area shape="rect" coords="72,122,189,187" href="https://www.mi.com/" target="_blank" alt="">
+        <area shape="circle" coords="128,275,90" href="html-basic.html" target="_self" alt="">
+        <area shape="poly" coords="63,80,62,187,25,275,161,384,221,258,192,185,187,87" href="html-basic.html"
+            target="_self" alt="">
+    </map>
+    <hr>
+    <a href="https://www.mi.com" target="frame1">点击我会在下面的Frame里打开小米商场，但为什么打不开呢？</a><br>
+    <!--因为小米商城只能在该域名下的框架中打开-->
+    <iframe src="http://www.nodejs.org" frameborder="1" name="frame1">
+        Hello word
+    </iframe>
+    <div>
+        怎样&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在这两个字之间空这么大呢？
+        <br>
+        怎样在页面中显示下面的内容呢？
+        <br>
+        &#60;span>&#60/span>
+    </div>
     <a href="" id="bottom"></a>
 </body>
-
 </html>
