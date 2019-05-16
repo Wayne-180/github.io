@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>radio slider</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .viewpager {
+            width: 1280px;
+            height: 720px;
+            margin: auto;
+            margin-top: 50px;
+            border: 1px solid;
+        }
+
+        img {
+            width: 1280px;
+            height: 720px;
+            position: absolute;
+            visibility: hidden;
+        }
+
+        .imgbox {
+            width: 1280px;
+            height: 720px;
+            position: relative;
+            top: 0px;
+            left: -85px;
+
+        }
+
+        input {
+            position: relative;
+            top: 740px;
+            left:100px;
+        }
+        
+        .r1:checked~.img1 {
+            visibility: visible;
+
+        }
+
+        .r2:checked~.img2 {
+            visibility: visible;
+
+        }
+
+        .r3:checked~.img3 {
+            visibility: visible;
+
+        }
+
+        .r4:checked~.img4 {
+            visibility: visible;
+        }
+        .r5:checked~.img5 {
+            visibility: visible;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="viewpager">
+
+        <div class="imgbox">
+            <input type="radio" class="r1" name="radio" id="p1" checked>
+            <input type="radio" class="r2" name="radio" id="p1">
+            <input type="radio" class="r3" name="radio" id="p1">
+            <input type="radio" class="r4" name="radio" id="p1">
+            <input type="radio" class="r5" name="radio" id="p1">
+            <img class="img1" src="../images/1.jpg">
+            <img class="img2" src="../images/2.jpg">
+            <img class="img3" src="../images/3.jpg">
+            <img class="img4" src="../images/4.jpg">
+            <img class="img5" src="../images/5.jpg">
+        </div>
+    </div>
+</body>
+
+</html>
