@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>小米商城</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: rgb(51, 51, 51);
+            margin: auto;
+            height: 40px;
+        }
+
+        .topbar {
+            background-color: red;
+            margin: auto;
+            height: 140px;
+        }
+
+        .viewpager {
+            margin: auto;
+            width: 1226px;
+            height: 460px;
+        }
+
+        .viewpager img {
+            xwidth: 1226px;
+            height: 460px;
+        }
+
+        .sidebar {
+            background-color: rgb(100, 100, 100);
+            width: 235px;
+            height: 460px;
+            xmargin: auto;
+            position: absolute;
+            left: 132px;
+            top: 180px;
+            right: 0;
+            bottom: 0px;
+        }
+
+        .footer {
+            background-color: yellow;
+            width: auto;
+            height: 1024px;
+            margin-top: 30px;
+        }
+
+        ul {
+            list-style: none;
+            text-align: center;
+        }
+
+        .sidebar ul {
+            margin-top: 30px;
+
+        }
+
+        .sidebar ul li {
+            height: 30px;
+            xbackground-color: red;
+            line-height: 30px;
+            margin-bottom: 10px;
+        }
+
+        .menu1 li:hover {
+            background-color: rgb(255, 103, 0);
+        }
+
+        ul li a {
+            color: white;
+            text-decoration: none;
+
+        }
+
+        .menu2 {
+            xdisplay: none;
+            position: relative;
+            top: -90px;
+            left: 235px;
+        }
+
+        .menu2 li {
+            background-color: green;
+        }
+
+        .menu1 li:hover .menu2 {
+            display: block;
+        }
+
+        .menu3 {
+            display: none;
+            position: absolute;
+            top: -30px;
+            left: 470px;
+        }
+
+        .menu3 li {
+            background-color: aquamarine;
+        }
+
+        .menu2 li:hover .menu3 {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+
+    </header>
+    <nav class="nav">
+        <div class="topbar"></div>
+    </nav>
+    <div class="content">
+        <div class="viewpager">
+            <img src="https://i1.mifile.cn/a4/xmad_15548066591437_Stxlj.jpg">
+            <div class="sidebar">
+                <ul class="menu1">
+                    <li><a href="">一级菜单</a>
+                        <ul class="menu2">
+                            <li>小米9
+                                    <ul class="menu3">
+                                            <li>xx</li>
+                                            <li>xx</li>
+                                            <li>xx</li>
+                                        </ul>
+                            </li>
+                            <li>小米9</li>
+                            <li>小米9</li>
+                            <li>小米9</li>
+                            <li>小米9</li>
+                        </ul>
+                    </li>
+                    <li><a href="">一级菜单</a>
+                    </li>
+                    <li><a href="">一级菜单</a></li>
+                    <li><a href="">一级菜单</a></li>
+                    <li><a href="">一级菜单</a></li>
+                    <li><a href="">一级菜单</a></li>
+                    <li><a href="">一级菜单</a></li>
+                    <li><a href="">一级菜单</a></li>
+                    <li><a href="">一级菜单</a></li>
+                    <li><a href="">一级菜单</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer">
+            <footer>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, a laboriosam cum voluptate maxime
+                    velit aliquam quia vel error magni, dicta ipsum quam accusantium. Recusandae dolores odio atque
+                    cumque amet!</p>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>

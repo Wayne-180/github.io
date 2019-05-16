@@ -20,27 +20,35 @@
             background-image:url(/images/googleicon.png)
     
         } */
-        div.icon2 {
-            width: 182px;
-            height: 61px;
+        /* [class^="icon"],
+        [icon*=" icon"] {
             background-image: url(../images/googleicon.png);
             background-repeat: no-repeat;
+        } */
+        .icon{
+            background-image: url(../images/googleicon.png);
+            background-repeat: no-repeat; 
+            display: inline-block;
+        }
+
+        .icon2 {
+            width: 182px;
+            height: 61px;
+
             background-position: 0 -70px;
         }
 
-        div.icon3 {
+        .icon3 {
             width: 182px;
             height: 61px;
-            background-image: url(../images/googleicon.png);
-            background-repeat: no-repeat;
+
             background-position: -192px -3px;
         }
 
-        div.icon4 {
+        .icon4 {
             width: 30px;
             height: 30px;
-            background-image: url(../images/googleicon.png);
-            background-repeat: no-repeat;
+
             background-position: -205px -90px;
         }
     </style>
@@ -48,17 +56,16 @@
 </head>
 
 <body>
-    <div class="icon_sprite">
-
-        <div class="icon1"></div>
-
-        <div class="icon2"></div>
-
-        <div class="icon3"></div>
-
-        <div class="icon4"></div>
-
-    </div>
+<i class="icon icon2"></i>
+<i class="icon icon3"></i>
+<i class="icon icon4"></i>
+<i></i>
+<i></i>
+<i></i>
+<i></i>
+<i></i>
+<i></i>
+<i></i>
 </body>
 
 </html>
