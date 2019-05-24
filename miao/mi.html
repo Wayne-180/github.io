@@ -5,25 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="a.css">
     <title>小米商城</title>
     <style>
         * {
             margin: 0;
             padding: 0;
         }
- 
+
         header {
             background-color: rgb(51, 51, 51);
             margin: auto;
             height: 40px;
         }
 
-        .topbar {
-            background-color:#255,255,255;
+        .topbar-nav{
+            background-color: #255, 255, 255;
             margin: auto;
             height: 100px;
+            text-align: center;
         }
-
         .viewpager {
             margin: auto;
             width: 1226px;
@@ -36,8 +37,8 @@
         }
 
         .sidebar {
-            background: rgba(0,0,0,0.6);
-            xbackground-color:rgba(0,152,50,0.7);
+            background: rgba(0, 0, 0, 0.6);
+            xbackground-color: rgba(0, 152, 50, 0.7);
             width: 235px;
             height: 462px;
             xmargin: auto;
@@ -86,7 +87,7 @@
             position: relative;
             top: -42px;
             left: 235px;
-            background: rgba(0,0,0,0.6);
+            background: rgba(0, 0, 0, 0.6);
         }
 
         .menu2 li {
@@ -98,7 +99,7 @@
         }
 
         .menu3 {
-            background: rgba(0,0,0,0.6);
+            background: rgba(0, 0, 0, 0.6);
             width: 130px;
             display: none;
             position: absolute;
@@ -108,12 +109,14 @@
 
         .menu3 li {
             color: white;
+        
         }
 
         .menu2 li:hover .menu3 {
             display: block;
         }
-        span{
+
+        span {
             position: absolute;
             right: 30px;
         }
@@ -122,50 +125,21 @@
 
 <body>
     <header>
-
-    </header>
-    <nav class="nav">
-        <div class="topbar"></div>
-    </nav>
-    <div class="content">
-        <div class="viewpager">
-            <img src="https://i1.mifile.cn/a4/xmad_15548066591437_Stxlj.jpg">
-            <div class="sidebar">
-                <ul class="menu1">
-                    <li><a href="">手机 电话卡<span>＞</span></a>
-                        <ul class="menu2">
-                            <li>小米9
-                                    <ul class="menu3">
-                                            <li>小米9se</li>
-                                            <li>小米9</li>
-                                            <li>小米9屏下指纹</li>
-                                        </ul>
-                            </li>
-                            <li>小米9</li>
-                            <li>小米9</li>
-                            <li>小米9</li>
-                            <li>小米9</li>
-                        </ul>
-                    </li>
-                    <li><a href="">电视 盒子<span>＞</span></a></li>
-                    <li><a href="">笔记本 平板<span>＞</span></a></li>
-                    <li><a href="">家电 插线板<span>＞</span></a></li>
-                    <li><a href="">出行 穿戴<span>＞</span></a></li>
-                    <li><a href="">智能 路由器<span>＞</span></a></li>
-                    <li><a href="">电源 配件<span>＞</span></a></li>
-                    <li><a href="">健康 儿童<span>＞</span></a></li>
-                    <li><a href="">耳机 音箱<span>＞</span></a></li>
-                    <li><a href="">生活 箱包<span>＞</span></a></li>
+        <nav class="nav">
+            <div class="topbar-nav">
+                <a href="">小米商城<span class="sep">|</span></a>
+                <a href="">MIUI<span class="sep">|</span></a>
+                <a href="">loT<span class="sep">|</span></a>
+                <a href="">云服务<span class="sep">|</span></a>
+                <a href="">金融<span class="sep">|</span></a>
+                <a href="">有品<span class="sep">|</span></a>
+                <a href="">小爱开放平台<span class="sep">|</span></a>
+                <a href="">企业团购<span class="sep">|</span></a>
+                <a href="">资质证照<span class="sep">|</span></a>
+                <a href="">协议规则<span class="sep">|</span></a>
             </div>
-        </div>
-        <div class="footer">
-            <footer>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, a laboriosam cum voluptate maxime
-                    velit aliquam quia vel error magni, dicta ipsum quam accusantium. Recusandae dolores odio atque
-                    cumque amet!</p>
-            </footer>
-        </div>
-    </div>
+        </nav>
+    </header>
 </body>
 
 </html>

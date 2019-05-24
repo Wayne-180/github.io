@@ -1,0 +1,68 @@
+/* 忘了这啥意思了 */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* 设置整个body使用的字体 */
+
+body {
+    font: "microsoft Yahei"
+}
+
+/* 设置header的背景颜色、行高、文本居中、字体大小与样式 */
+
+header {
+    background-color: #333333;
+    height: 40px;
+    text-align: center;
+    font: 12px "microsoft Yahei", sans-serif;
+    line-height: 40px;
+    position: relative;
+}
+
+/* 设置header中a标签的颜色及去掉默认样式 */
+
+header a:link, a:visited {
+    text-decoration: none;
+    color: #b0b0b0;
+}
+
+/* header中a标签hover高亮 */
+
+header a:hover {
+    color: #fff;
+}
+
+/* header中分隔的竖线样式 */
+
+header .sep {
+    margin: 0.5em;
+    color: #424242;
+}
+
+/* 将header-nav设置为行内块元素为浮动做准备 */
+
+.header-nav {
+    position: absolute;
+    float: left;
+    display: inline-block;
+    left: 20%;
+}
+
+/* 将header-info设置为行内块元素为浮动做准备 */
+
+.header-info {
+    right: 25%;
+    position: absolute;
+    float: right;
+    display: inline-block;
+}
+.header-cart{
+    position: absolute;
+    right: 20%;
+    background-color: #424242;
+    display: inline-block;
+    float:right;
+}
