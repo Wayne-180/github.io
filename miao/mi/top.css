@@ -1,0 +1,279 @@
+/* 忘了这啥意思了 */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font: 14px/1.5 "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+    color: #333;
+    background-color: #fff;
+    min-width: 1226px;
+}
+
+/*从头部开始写*/
+
+.header {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 1226px;
+}
+
+/* 设置header的背景颜色、行高、文本居中、字体大小与样式 */
+
+header {
+    background-color: #333333;
+    height: 40px;
+    text-align: center;
+    font: 12px "microsoft Yahei", sans-serif;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a:link, a:visited {
+    text-decoration: none;
+}
+
+.header a {
+    display: inline-block;
+    line-height: 40px;
+}
+
+/* 设置header中a标签的颜色及去掉默认样式 */
+
+.header a:link, a:visited {
+    color: #b0b0b0;
+}
+
+/* header中a标签hover高亮 */
+
+.header a:hover {
+    color: #fff;
+}
+
+/* header中分隔的竖线样式 */
+
+.header .sep {
+    margin: 0.5em;
+    color: #424242;
+}
+
+/* 将header-nav设置为行内块元素为浮动做准备 */
+
+.header-nav {
+    float: left;
+    display: inline-block;
+    left: 20%;
+}
+
+/* 将header-info设置为行内块元素为浮动做准备 */
+
+.header-info {
+    position: relative;
+    left: -25px;
+    float: right;
+    display: inline-block;
+}
+
+.header-cart {
+    width: 120px;
+    height: 40px;
+    display: inline-block;
+    background-color: #424242;
+    line-height: 39px;
+    float: right;
+}
+
+/*top bar*/
+
+.top-bar {
+    height: 100px;
+    width: 100%;
+    xoverflow: hidden;
+}
+
+.top-nav {
+    position: relative;
+    text-align: center;
+    width: 1226px;
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    xoverflow: hidden;
+}
+
+.nav-item {
+    width: auto;
+    height: 100px;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.toplogo {
+    width: 55px;
+    height: 55px;
+    background-image: url(./img/logo.png);
+    position: absolute;
+    left: 0px;
+    top: 25px;
+    float: left;
+    display: inline-block;
+}
+
+.top-nav .nav-item .nav-menu>li>a {
+    font-size: 16px;
+    display: block;
+    padding: 26px 10px 38px;
+    color: #333;
+}
+
+.top-nav .nav-item {
+    padding: 12px 0 0 30px;
+    list-style: none;
+    display: inline-block;
+}
+
+.top-nav .nav-item li {
+    display: inline-block;
+}
+
+.top-nav .nav-item .nav-menu>li>a:hover {
+    color: #ff6700;
+}
+
+.top-search {
+    margin-top: 25px;
+    width: 296px;
+    height: 100px;
+    display: inline-block;
+    float: right;
+}
+
+.search-form {
+    width: 290px;
+    height: 50px;
+    position: relative;
+}
+
+.search-form:hover {
+    border: 1px solid #b0b0b0;
+}
+
+.search-text {
+    border: 1px solid #e0e0e0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    width: 290px;
+    height: 50px;
+    box-sizing: border-box;
+}
+
+#search-button {
+    margin: 0;
+    padding: 0;
+    border: 1px solid transparent;
+    outline: none;
+    border: 1px solid #e0e0e0;
+    background-color: transparent;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 2;
+    width: 50px;
+    height: 50px;
+}
+
+.item-menu {
+    list-style: none;
+    left: -347px;
+    position: absolute;
+    top: 100px;
+    width: 1920px;
+    height: 230px;
+    xbackground-color: red;
+    min-width: 1226px;
+    xdisplay: none;
+    opacity: 0;
+    transition: opacity 1s;
+    visibility: hidden;
+ 
+}
+
+.item-list {
+    width: 1226px;
+    height: 100%;
+    xbackground: green;
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+.item-list>li {
+    position: relative;
+    xfloat: left;
+    width: 200px;
+    xpadding: 35px 12px 0;
+    text-align: center;
+}
+.item-list>li:nth-child(n+2)::before{
+    position: absolute;
+    left: 0;
+    top: 35px;
+    z-index: 1;
+    width: 1px;
+    height: 100px;
+    content: "";
+    background-color: #e0e0e0;
+}
+.nav-menu>li:hover .item-menu {
+    opacity: 1;
+    visibility:visible;
+    border-top: 1px solid #e0e0e0;
+
+    
+}
+
+.list-box {
+    width: 160px;
+    height: 110px;
+    margin: 0 auto 16px;
+    text-align: center;
+}
+
+.list-box img {
+    margin-bottom: 20px;
+    display: block;
+    width: 160px;
+    height: 110px;
+}
+
+.flag {
+    text-align: center;
+    display: inline-block;
+    height: 18px;
+    padding: 1px 20px;
+    border: 1px solid #ff6700;
+    color: #ff6700;
+    margin-bottom: 15px;
+}
+
+.list-box>a {
+    text-align: center;
+    width: 100%;
+    display: inline-block;
+    line-height: 20px;
+    list-style-type: none;
+    font-size: 12px;
+}
+
+.price {
+    text-align: center;
+    display: inline-block;
+    margin: 0;
+    line-height: 20px;
+    color: #ff6700;
+}
