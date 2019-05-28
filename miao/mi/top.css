@@ -12,6 +12,11 @@ body {
     min-width: 1226px;
 }
 
+.conetent {
+    width: 1920px;
+    min-width: 1226px;
+}
+
 /*从头部开始写*/
 
 .header {
@@ -107,7 +112,7 @@ a:link, a:visited {
 
 .nav-item {
     width: auto;
-    height: 100px;
+    height: 88px;
     display: inline-block;
     overflow: hidden;
 }
@@ -147,9 +152,10 @@ a:link, a:visited {
 .top-search {
     margin-top: 25px;
     width: 296px;
-    height: 100px;
+    height: 75px;
     display: inline-block;
     float: right;
+    xbox-sizing: border-box;
 }
 
 .search-form {
@@ -195,13 +201,14 @@ a:link, a:visited {
     top: 100px;
     width: 1920px;
     height: 230px;
-    xbackground-color: red;
     min-width: 1226px;
-    xdisplay: none;
+    background-color: #ffffff;
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
     opacity: 0;
-    transition: opacity 1s;
+    transition: .5s;
+    transition-delay: 0s;
     visibility: hidden;
- 
 }
 
 .item-list {
@@ -219,7 +226,8 @@ a:link, a:visited {
     xpadding: 35px 12px 0;
     text-align: center;
 }
-.item-list>li:nth-child(n+2)::before{
+
+.item-list>li:nth-child(n+2)::before {
     position: absolute;
     left: 0;
     top: 35px;
@@ -229,12 +237,11 @@ a:link, a:visited {
     content: "";
     background-color: #e0e0e0;
 }
+
 .nav-menu>li:hover .item-menu {
     opacity: 1;
-    visibility:visible;
-    border-top: 1px solid #e0e0e0;
-
-    
+    transition-delay: .5s;
+    visibility: visible;
 }
 
 .list-box {
@@ -277,3 +284,4 @@ a:link, a:visited {
     line-height: 20px;
     color: #ff6700;
 }
+
