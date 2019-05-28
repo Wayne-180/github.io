@@ -24,29 +24,36 @@ main {
 
 aside {
     color: #fff;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0, 0, 0, 0.6);
     font-size: 14px;
     width: 230px;
     height: 460px;
     display: inline-block;
     float: left;
+    position: relative;
 }
-.aside-list{
+
+.aside-list {
     padding: 20px 0 20px 0;
     width: 100%;
     height: 420px;
     list-style: none;
+    xposition: relative;
 }
-.aside-list li{
+
+.aside-list>li {
+    xposition: relative;
     width: 100%;
     height: 10%;
 }
-.aside-list-box{
+
+.aside-list-box {
+    xposition: relative;
     width: 100%;
     height: 100%;
 }
-.aside-list-box a{
-    xposition: relative;
+
+.aside-list-box a {
     text-align: left;
     display: block;
     padding-left: 30px;
@@ -54,11 +61,65 @@ aside {
     line-height: 42px;
     color: #fff;
 }
-.aside-list i{
+
+.aside-list i {
     line-height: 42px;
     padding-right: 20px;
     float: right;
 }
-.aside-list-box:hover{
+
+.aside-list-box:hover {
     background: #FF6700;
+}
+
+.aside-list2 {
+    position: absolute;
+    left: 230px;
+    top:0;
+    font-size: 0;
+    display: inline-block;
+    list-style-type: none;
+    background-color: red;
+    width: 996px;
+    height: 460px;
+    box-sizing: border-box;
+    border: 1px solid #e0e0e0;
+    background: #ffffff;
+    display: none;
+}
+
+.aside-list-box:hover~.aside-list2 {
+    display: block;
+}
+.aside-list2:hover{
+    display: block;
+}
+
+.aside-list2 li {
+    font-size: 14px;
+    width: calc(100% / 4);
+    height: calc(100% / 6);
+    display: inline-block;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.list2-box img {
+    float: left;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    box-sizing: border-box;
+    margin: 20px 0 20px 20px;
+}
+
+.list2-box a {
+    position: relative;
+    left: -10px;
+    float: left;
+    display: inline-block;
+    text-align: left;
+    line-height: 40px;
+    padding: 18px 20px;
+    color: black;
 }
