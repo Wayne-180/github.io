@@ -102,6 +102,7 @@ a:link, a:visited {
 
 .top-nav {
     position: relative;
+    z-index: 2;
     text-align: center;
     width: 1226px;
     height: 100px;
@@ -114,7 +115,7 @@ a:link, a:visited {
     width: auto;
     height: 88px;
     display: inline-block;
-    overflow: hidden;
+    xoverflow: hidden;
 }
 
 .toplogo {
@@ -173,7 +174,7 @@ a:link, a:visited {
     position: absolute;
     right: 0;
     top: 0;
-    z-index: 1;
+    xz-index: 1;
     width: 290px;
     height: 50px;
     box-sizing: border-box;
@@ -189,7 +190,7 @@ a:link, a:visited {
     position: absolute;
     right: 0;
     top: 0;
-    z-index: 2;
+    xz-index: 2;
     width: 50px;
     height: 50px;
 }
@@ -231,7 +232,7 @@ a:link, a:visited {
     position: absolute;
     left: 0;
     top: 35px;
-    z-index: 1;
+    xz-index: 1;
     width: 1px;
     height: 100px;
     content: "";

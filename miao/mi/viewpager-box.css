@@ -7,18 +7,13 @@ main {
     font-size: 0;
     min-width: 1226px;
     text-align: center;
+    box-sizing: border-box;
 }
 
 .viewpager-box {
     width: 1226px;
     height: 460px;
     min-width: 1226px;
-    display: inline-block;
-}
-
-.viewpager {
-    height: 460px;
-    width: calc(1226px - 230px);
     display: inline-block;
 }
 
@@ -30,6 +25,7 @@ aside {
     height: 460px;
     display: inline-block;
     float: left;
+    z-index: 1;
     position: relative;
 }
 
@@ -75,7 +71,7 @@ aside {
 .aside-list2 {
     position: absolute;
     left: 230px;
-    top:0;
+    top: 0;
     font-size: 0;
     display: inline-block;
     list-style-type: none;
@@ -85,13 +81,15 @@ aside {
     box-sizing: border-box;
     border: 1px solid #e0e0e0;
     background: #ffffff;
+    z-index: 2;
     display: none;
 }
 
 .aside-list-box:hover~.aside-list2 {
     display: block;
 }
-.aside-list2:hover{
+
+.aside-list2:hover {
     display: block;
 }
 
@@ -122,4 +120,119 @@ aside {
     line-height: 40px;
     padding: 18px 20px;
     color: black;
+}
+
+.viewpager {
+    position: relative;
+    left: 0;
+    top: -460px;
+    width: 1226px;
+    height: 460px;
+    z-index: 0;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.viewpager img {
+    width: 1226px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    display: inline-block;
+    visibility: hidden;
+}
+
+.viewpager input[type="radio"] {
+    display: none;
+}
+
+.label-group {
+    width: 100px;
+    height: 20px;
+    position: absolute;
+    right: 35px;
+    bottom: 20px;
+    text-align: center;
+}
+
+.viewpager label {
+    position: relative;
+    z-index: 1;
+    right: -530px;
+    bottom: -425px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid rgb(139, 145, 149);
+    background: rgba(129, 140, 146, 1);
+    box-sizing: border-box;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.viewpager>label:hover {
+    background: rgba(129, 140, 146, 1);
+    ;
+}
+
+.viewpager input:nth-child(n):checked+label {
+    background: rgba(129, 140, 146, 0.6);
+}
+
+.viewpager input:nth-of-type(1):checked~.p1 {
+    visibility: visible;
+}
+
+.viewpager input:nth-of-type(2):checked~.p2 {
+    visibility: visible;
+}
+
+.viewpager input:nth-of-type(3):checked~.p3 {
+    visibility: visible;
+}
+
+.viewpager input:nth-of-type(4):checked~.p4 {
+    visibility: visible;
+}
+
+.viewpager input:nth-of-type(5):checked~.p5 {
+    visibility: visible;
+}
+
+#left {
+    font-size: 40px;
+    z-index: 1;
+    position: absolute;
+    display: inline-block;
+    width: 40px;
+    height: 70px;
+    left: 235px;
+    top:200px;
+    padding-top: 5px;
+    background: rgba(0, 0, 0, 0);
+    border:0;
+    border-radius: 0;
+    color: #D5D5D5;
+}
+/* .viewpager i{
+    color: #D5D5D5;
+} */
+#right {
+    font-size: 40px;
+    text-align: center;
+    position: absolute;
+    z-index: 1;
+    display: inline-block;
+    width: 40px;
+    height: 70px;
+    right: 12px;
+    top: 200px;
+    padding-top: 5px;
+    background: rgba(0, 0, 0, 0);
+    border:0;
+    border-radius: 0;
+    color: #D5D5D5;
+}
+#left:hover,#right:hover{
+    background: rgba(0, 0, 0, 0.6);
 }
