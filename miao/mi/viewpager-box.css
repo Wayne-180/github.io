@@ -155,7 +155,7 @@ aside {
     text-align: center;
 }
 
-.viewpager label {
+.viewpager>label {
     position: relative;
     z-index: 1;
     right: -530px;
@@ -199,6 +199,54 @@ aside {
     visibility: visible;
 }
 
+#left label, #right label {
+    display: none;
+}
+
+/* left按钮选择器 */
+
+.viewpager input:nth-of-type(1):checked~#left label:nth-child(5) {
+    display: block;
+}
+
+.viewpager input:nth-of-type(5):checked~#left label:nth-child(4) {
+    display: block;
+}
+
+.viewpager input:nth-of-type(4):checked~#left label:nth-child(3) {
+    display: block;
+}
+
+.viewpager input:nth-of-type(3):checked~#left label:nth-child(2) {
+    display: block;
+}
+
+.viewpager input:nth-of-type(2):checked~#left label:nth-child(1) {
+    display: block;
+}
+
+/* right按钮选择器 */
+
+.viewpager input:nth-of-type(1):checked~#right label:nth-child(2) {
+    display: block;
+}
+
+.viewpager input:nth-of-type(2):checked~#right label:nth-child(3) {
+    display: block;
+}
+
+.viewpager input:nth-of-type(3):checked~#right label:nth-child(4) {
+    display: block;
+}
+
+.viewpager input:nth-of-type(4):checked~#right label:nth-child(5) {
+    display: block;
+}
+
+.viewpager input:nth-of-type(5):checked~#right label:nth-child(1) {
+    display: block;
+}
+
 #left {
     font-size: 40px;
     z-index: 1;
@@ -207,16 +255,14 @@ aside {
     width: 40px;
     height: 70px;
     left: 235px;
-    top:200px;
+    top: 200px;
     padding-top: 5px;
     background: rgba(0, 0, 0, 0);
-    border:0;
+    border: 0;
     border-radius: 0;
     color: #D5D5D5;
 }
-/* .viewpager i{
-    color: #D5D5D5;
-} */
+
 #right {
     font-size: 40px;
     text-align: center;
@@ -229,10 +275,13 @@ aside {
     top: 200px;
     padding-top: 5px;
     background: rgba(0, 0, 0, 0);
-    border:0;
-    border-radius: 0;
     color: #D5D5D5;
 }
-#left:hover,#right:hover{
+
+#right i, #left i {
+    font-size: 30px;
+}
+
+#left:hover, #right:hover {
     background: rgba(0, 0, 0, 0.6);
 }
