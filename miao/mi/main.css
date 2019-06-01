@@ -426,8 +426,29 @@ aside {
 .more a:hover{
     color: #FF6700;
 }
-.phone-box{
+.phone{
     width: 1226px;
-    height: 628px;
     margin: auto;
+}
+.phone-adbox{
+    float: left;
+}
+.phone-ad img{
+    width: 234px;
+    height: 614px;
+
+}
+.phone-box{
+    xwidth: 1226px;
+    height: 628px;
+
+}
+.page-main ul li{
+    transition: 0.3s;
+    
+}
+.page-main ul li:hover{
+    margin-top: -3px;
+    box-shadow: 5px 5px 20px -5px rgba(176, 176, 176, 0.6), -5px 5px 20px -5px rgba(176, 176, 176, 0.6);
+    transition: 0.3s;
 }
