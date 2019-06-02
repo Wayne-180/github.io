@@ -455,8 +455,11 @@ aside {
     width: calc(1226px - 234px);
     height: 628px;
     float: right;
-}
 
+}
+.phone-ul{
+
+}
 .phone-ul li {
     xfloat: left;
     width: 234px;
@@ -466,6 +469,7 @@ aside {
     box-sizing: border-box;
     position: relative;
     display: inline-block;
+    padding: 20px 0 20px 0;
 }
 .flagstate{
     position: absolute;
@@ -490,7 +494,7 @@ aside {
 .phone-ul  a img {
     width: 160px;
     height: 160px;
-    margin-top: 20px;
+    margin-top: -20px;
     display: inline-block;
 }
 .phone-ul  a {
