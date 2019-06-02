@@ -67,15 +67,11 @@ a:link, a:visited {
     color: #424242;
 }
 
-/* 将header-nav设置为行内块元素为浮动做准备 */
-
 .header-nav {
     float: left;
     display: inline-block;
     left: 20%;
 }
-
-/* 将header-info设置为行内块元素为浮动做准备 */
 
 .header-info {
     position: relative;
@@ -91,6 +87,44 @@ a:link, a:visited {
     background-color: #424242;
     line-height: 39px;
     float: right;
+    position: relative;
+}
+
+.header-cart:hover {
+    background-color: white;
+}
+
+.header-cart:hover .cart-menu {
+    transition: 0.3s;
+    height: 97px;
+    line-height: 100px;
+    cursor: initial;
+    display: block;
+}
+
+.header-cart:hover a {
+    color: #ff6700;
+}
+
+.cart-menu {
+    display: block;
+    position: absolute;
+    top: 40px;
+    z-index: 6;
+    transition: 0.2s 0.3s;
+    height: 0px;
+    background-color: white;
+    left: -200px;
+    color: black;
+    width: 320px;
+    text-align: center;
+    box-shadow: 0px -1px 5px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.cart-menu p {
+    margin: 5px 20px 20px;
+    text-align: center;
 }
 
 /*top bar*/
@@ -160,13 +194,20 @@ a:link, a:visited {
 }
 
 .search-form {
+    font-size: 14px;
     width: 290px;
     height: 50px;
     position: relative;
 }
 
-.search-form:hover {
+.search-form:hover>.search-text, .search-form:hover>#search-button {
     border: 1px solid #b0b0b0;
+    transition: 0.2s;
+}
+
+#search-button:hover {
+    color: white;
+    background-color: #ff6700;
 }
 
 .search-text {
@@ -193,6 +234,98 @@ a:link, a:visited {
     xz-index: 2;
     width: 50px;
     height: 50px;
+}
+
+.search-a {
+    position: absolute;
+    top: 14px;
+    right: 62px;
+    z-index: 2;
+    text-align: right;
+}
+
+.search-a a {
+    color: #757575;
+    line-height: 14px;
+    background-color: #EEEEEE;
+    margin-left: 5px;
+    padding: 0 5px;
+    font-size: 12px;
+    text-align: right;
+}
+
+.search-a a:hover {
+    transition: .2s;
+    color: white;
+    background-color: #ff6700;
+}
+
+#search {
+    line-height: 50px;
+    list-style: none;
+    text-align: left;
+    font-size: 18px;
+}
+
+#search:focus {
+    outline: none;
+    border-color: #ff6700;
+}
+
+#search:focus~.search-a {
+    display: none;
+}
+
+#search:focus~#search-button {
+    border-color: #ff6700;
+}
+
+#search:focus~.search-focus {
+    display: block;
+}
+
+.search-focus {
+    height: 302px;
+    width: 241px;
+    top: 49px;
+    position: absolute;
+    left: 0;
+    display: inline-block;
+    background-color: white;
+    border: 1px solid #ff6700;
+    display: none;
+    box-sizing: border-box;
+}
+
+.search-focus ul {
+    list-style: none;
+}
+
+.search-focus li {
+    padding-top: 10px;
+    margin: 0;
+    text-align: left;
+    display: block;
+    height: 30px;
+    box-sizing: border-box;
+}
+
+.search-focus li:hover {
+    background-color: #FAFAFA;
+}
+
+.search-focus li a {
+    font-size: 12px;
+    margin-left: 15px;
+    text-align: left;
+    color: #424242;
+}
+
+.search-focus li span {
+    margin-right: 15px;
+    float: right;
+    text-align: right;
+    color: #b0b0b0;
 }
 
 .item-menu {
