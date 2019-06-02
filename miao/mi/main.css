@@ -19,7 +19,6 @@ main {
     xdisplay: inline-block;
     overflow: hidden;
     position: relative;
-    
     /* font-size: 14px;
     xwidth: 1226px;
     height: 170px;
@@ -352,7 +351,7 @@ aside {
     float: left;
     margin: 0;
     height: 100%;
-    width:316px;
+    width: 316px;
     display: inline-block;
     margin-left: 15px;
     background-size: 100%;
@@ -378,30 +377,37 @@ aside {
     margin: auto auto 45px auto;
     display: inline-block;
 }
-.Banner-ad img{
+
+.Banner-ad img {
     width: 1226px;
     height: 120px;
 }
 
 /* 鼠标下拉页 */
 
-.page-main {
+.page-main{
     min-width: 1226px;
     position: relative;
     background-color: #F5F5F5;
     padding-top: 32px;
 }
-/*用一个盒子来装内容*/
-.phone{
 
+/*用一个盒子来装内容*/
+
+.phone {
+    background-color: #F5F5F5;
+    position: relative;
 }
+
 /*下拉页标题*/
+
 .page-title {
     width: 1226px;
     height: 58px;
     margin: auto;
 }
-.page-title h2{
+
+.page-title h2 {
     margin: 0;
     font-size: 22px;
     font-weight: 200;
@@ -410,45 +416,114 @@ aside {
     float: left;
     display: inline-block
 }
-.page-title .more{
+
+.page-title .more {
     float: right;
     width: 92px;
     height: 100%;
     display: inline-block;
 }
-.more a{
+
+.more a {
     font-size: 16px;
     line-height: 58px;
     color: #424242;
     -webkit-transition: all .4s;
     transition: all .4s;
 }
-.more a:hover{
+
+.more a:hover {
     color: #FF6700;
 }
-.phone{
+
+.phone {
     width: 1226px;
     margin: auto;
+    display: inline-block;
 }
-.phone-adbox{
+
+.phone-adbox {
     float: left;
 }
-.phone-ad img{
+
+.phone-ad img {
     width: 234px;
     height: 614px;
-
 }
-.phone-box{
-    xwidth: 1226px;
+
+.phone-box {
+    width: calc(1226px - 234px);
     height: 628px;
+    float: right;
+}
 
+.phone-ul li {
+    xfloat: left;
+    width: 234px;
+    xheight: 300px;
+    margin-left: 14px;
+    margin-bottom: 14px;
+    box-sizing: border-box;
+    position: relative;
+    display: inline-block;
 }
-.page-main ul li{
+.flagstate{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    z-index: 2;
+    width: 64px;
+    height: 20px;
+    margin-left: -32px;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: center;
+    color: #fff;
+    display: inline-block;
+}
+.flagstate.new{
+    background-color: #83c44e;
+}
+.flagstate.old{
+    background-color: #E53935;
+}
+.phone-ul  a img {
+    width: 160px;
+    height: 160px;
+    margin-top: 20px;
+    display: inline-block;
+}
+.phone-ul  a {
+    font-size: 14px;
+    width: 214px;
+    height: 20px;
+    margin-top: 20px;
+    display: inline-block;
+}
+.desc{
+    margin: 0 10px 10px;
+    height: 18px;
+    font-size: 12px;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #b0b0b0;
+}
+.phone-price{
+    font-size:14px;
+    text-align: center;
+    color: #ff6700;
+    margin: 0 10px 14px;
+}
+.page-main ul li {
+    background-color: #FFFFFF;
     transition: 0.3s;
-    
 }
-.page-main ul li:hover{
+
+.page-main ul li:hover {
     margin-top: -3px;
+    top:-3px;
     box-shadow: 5px 5px 20px -5px rgba(176, 176, 176, 0.6), -5px 5px 20px -5px rgba(176, 176, 176, 0.6);
     transition: 0.3s;
 }
