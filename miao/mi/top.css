@@ -197,7 +197,7 @@ a:link, a:visited {
 
 .item-menu {
     list-style: none;
-    left: -347px;
+    left: 0px;
     position: absolute;
     top: 100px;
     height: 230px;
