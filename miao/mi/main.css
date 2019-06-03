@@ -173,18 +173,21 @@ aside {
     height: 10px;
     border-radius: 50%;
     border: 2px solid rgb(139, 145, 149);
-    background: rgba(129, 140, 146, 1);
+    background: rgba(129, 140, 146, 0.6);
     box-sizing: border-box;
     display: inline-block;
     margin-left: 10px;
 }
 
 .viewpager>label:hover {
-    background: rgba(129, 140, 146, 1);
+    /* background: rgba(129, 140, 146, 1); */
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.6)
 }
 
 .viewpager input:nth-child(n):checked+label {
-    background: rgba(129, 140, 146, 0.6);
+    /* background: rgba(129, 140, 146, 0.6); */
+    background-color: rgba(255, 255, 255, 0.6)
 }
 
 .viewpager input:nth-of-type(1):checked~.p1 {
