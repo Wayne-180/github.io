@@ -50,7 +50,7 @@ a:link, a:visited {
 
 /* 设置header中a标签的颜色及去掉默认样式 */
 
-.header a:link, a:visited {
+.header  a:link, a:visited {
     color: #b0b0b0;
 }
 
