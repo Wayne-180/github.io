@@ -444,7 +444,6 @@ aside {
     width: 1226px;
     margin: auto;
     display: inline-block;
-    overflow: hidden;
 }
 
 .phone-adbox {
@@ -532,13 +531,12 @@ aside {
     margin: 0 10px 14px;
 }
 
-.page-main ul li {
+.page-main .phone ul li {
     background-color: #FFFFFF;
     transition: 0.3s;
 }
 
-<<<<<<< HEAD
-.page-main ul li:hover {
+.page-main .phone ul li:hover {
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
     transform: translate3d(0,-2px,0);
 }
@@ -576,20 +574,66 @@ aside {
     margin-left: 30px;
     display: inline-block;
 }
-.title-kind ul li:hover{
-    box-shadow: none;
-}
-
-.title-kind a {
-    color: black;
-}
 
 .title-kind a:hover {
+    cursor: pointer;
+    margin-bottom: 3px;
     transition: all 0.3s;
     color: #FF6700;
     border-bottom: 2px solid #FF6700;
 }
+
 .page-commodity {
     background-color: #F5F5F5;
     position: relative;
+}
+
+.commodity {
+    width: 1226px;
+    margin: auto;
+    display: inline-block;  
+}
+
+.commodity-ad {
+    width: 234px;
+    float: left;
+    margin-left: 14px;
+    min-height: 1px;
+}
+
+.commodity-ad ul {
+    height: 614px;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    margin: 0 0 -14px -14px;
+}
+
+.commodity-ad li {
+    position: relative;
+    z-index: 1;
+    float: left;
+    width: 234px;
+    margin-bottom: 14px;
+    background: #fff;
+    transition: all .2s linear;
+    height: 300px;
+    padding: 0
+}
+
+.commodity-ad a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #757575;
+    text-decoration: none;
+}
+.commodity-ad img {
+    width: 234px;
+    height: 300px;
+}
+
+.commodity-ad li:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    transform: translate3d(0,-2px,0);
 }
