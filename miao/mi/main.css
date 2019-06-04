@@ -538,9 +538,8 @@ aside {
 }
 
 .page-main ul li:hover {
-    margin-top: -3px;
-    top: -3px;
-    box-shadow: 5px 5px 20px -5px rgba(176, 176, 176, 0.6), -5px 5px 20px -5px rgba(176, 176, 176, 0.6);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    transform: translate3d(0,-2px,0);
     transition: 0.3s;
 }
 
@@ -589,4 +588,8 @@ aside {
     transition: all 0.3s;
     color: #FF6700;
     border-bottom: 2px solid #FF6700;
+}
+.page-commodity {
+    background-color: #F5F5F5;
+    position: relative;
 }
