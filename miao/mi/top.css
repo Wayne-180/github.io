@@ -41,6 +41,10 @@ header {
 
 a:link, a:visited {
     text-decoration: none;
+    color: #333;
+}
+ul li{
+    list-style: none;
 }
 
 .header a {
@@ -50,7 +54,7 @@ a:link, a:visited {
 
 /* 设置header中a标签的颜色及去掉默认样式 */
 
-.header  a:link, a:visited {
+.header a:link,.header a:visited {
     color: #b0b0b0;
 }
 
@@ -280,7 +284,7 @@ a:link, a:visited {
     border-color: #ff6700;
 }
 
-#search:focus~.search-focus {
+#search:focus~.search-focus,#search:hover {
     display: block;
 }
 
