@@ -23,9 +23,16 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "闰年",
-            "program": "${workspaceFolder}\\js\\year.js",
-            "console":"integratedTerminal"
+            "name": "614",
+            "program": "${workspaceFolder}\\js\\6_14.js",
+            "console":"externalTerminal"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "noi",
+            "program": "${workspaceFolder}\\js\\noi.js",
+            "console":"externalTerminal"
         }
 
     ]
