@@ -159,3 +159,45 @@
         alert(Math.pow(a, n))
     }
 </script>
+
+<script id="ch0104/01">
+    var N=Number(prompt())
+    if(N>=Math.pow(-10,9)&&N<=Math.pow(10,9)){
+        if(N>0){
+           alert("positive") 
+        }else if(N===0){
+            alert("zero")
+        }else if(N<0){
+            alert("negative")
+        }
+    }
+</script>
+
+<script id="ch0104/02">
+    var n=Number(prompt())
+    if(Math.abs(n)<=10000){
+        alert(Math.abs(n))
+    }
+</script>
+
+<script id="ch0104/03">
+    var n=Number(prompt())
+   if(parseInt(n)>0){
+    if((n+1)%2===0){
+        alert("odd")
+    }else if(n%2===0){
+        alert("even")
+    }
+  }
+</script>
+
+<script id="ch0104/04">
+    var Str=String(prompt())
+    var n=Str.charCodeAt()
+    n=parseInt(n)
+    if((n+1)%2===0){
+        alert("YES")
+    }else if(n%2===0){
+        alert("NO")
+    }
+</script>
