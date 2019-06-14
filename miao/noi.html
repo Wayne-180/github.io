@@ -15,7 +15,10 @@
     var a = Number(prompt())
     var b = Number(prompt())
     var c = Number(prompt())
-    console.log((a + b) / c)
+    if(a>-1000&&a<10000&&b>-1000&&b<10000&&c>-1000&&c<10000){
+        alert((a + b) / c)
+    }
+
 </script>
 
 
@@ -127,9 +130,12 @@
     var y2 = Number(prompt())
     var x3 = Number(prompt())
     var y3 = Number(prompt())
-    var d=x3-x2;
-    var h=y1-y2;
-    alert(d*h/2)
+    var a=Math.sqrt((Math.pow(x2-x1,2)+Math.pow(y2-y1,2)))
+    var b=Math.sqrt((Math.pow(x3-x1,2)+Math.pow(y3-y1,2)))
+    var c=Math.sqrt((Math.pow(x3-x2,2)+Math.pow(y3-y2,2)))
+    var p=(a+b+c)/2
+    var s=Math.sqrt(p*(p-a)*(p-b)*(p-c))
+    alert(s.toFixed(2))
 </script>
 
 <script id="ch0103/18">
