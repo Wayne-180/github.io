@@ -924,6 +924,8 @@ input[type=radio] {
 }
 .hotproduct{
     width: 1226px;
+    font-size: 14px;
+    line-height: 16px;
     background-color: #F5F5F5;
     margin: auto;
     overflow: hidden;
@@ -931,7 +933,7 @@ input[type=radio] {
 .hotproduct ul{
     xwidth: 1226px;
     overflow: hidden;
-    white-space: nowrap;
+    xwhite-space: nowrap;
     display: inline-block;
 }
 .hotproduct ul li{
@@ -949,4 +951,63 @@ input[type=radio] {
 }
 .hotproduct ul li:nth-last-child(1){
     margin-right: 0px;
+}
+.hotproduct li img{
+    width: 100%;
+    margin-bottom: 28px;
+}
+.hotproduct li:hover{
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    transform: translate3d(0, -2px, 0);
+}
+.hotproduct .review{
+    height: 72px;
+    margin: 0 28px 22px;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
+    overflow: hidden;
+}
+.hotproduct p>a{
+    text-align: left;
+    width: auto;
+    display: block;
+}
+.hotproduct .author{
+    text-align: left;
+    height: 18px;
+    margin: 0 28px 8px;
+    padding: 0 10px 0 0;
+    font-size: 12px;
+    color: #b0b0b0;
+}
+.info{
+    text-align:left;
+    margin: 0 30px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.info>h3{
+    display: inline-block;
+    text-align: left;
+    margin: 0;
+    font-size: 14px;
+    font-weight: 400;
+    max-width: 170px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    vertical-align: bottom;
+    color: #333;
+}
+.info h3>a{
+    color: #333;
+    font-size:14px;
+    display: inline-block;
+}
+.info .sep{
+    color: #e0e0e0;
+    margin: 0 .25em;
+    font-family: sans-serif;
 }
