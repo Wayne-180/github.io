@@ -161,55 +161,265 @@
 </script>
 
 <script id="ch0104/01">
-    var N=Number(prompt())
-    if(N>=Math.pow(-10,9)&&N<=Math.pow(10,9)){
-        if(N>0){
-           alert("positive") 
-        }else if(N===0){
+    var N = Number(prompt())
+    if (N >= Math.pow(-10, 9) && N <= Math.pow(10, 9)) {
+        if (N > 0) {
+            alert("positive")
+        } else if (N === 0) {
             alert("zero")
-        }else if(N<0){
+        } else if (N < 0) {
             alert("negative")
         }
     }
 </script>
 
 <script id="ch0104/02">
-    var n=Number(prompt())
-    if(Math.abs(n)<=10000){
+    var n = Number(prompt())
+    if (Math.abs(n) <= 10000) {
         alert(Math.abs(n))
     }
 </script>
 
 <script id="ch0104/03">
-    var n=Number(prompt())
-   if(parseInt(n)>0){
-    if((n+1)%2===0){
-        alert("odd")
-    }else if(n%2===0){
-        alert("even")
+    var n = Number(prompt())
+    if (parseInt(n) > 0) {
+        if ((n + 1) % 2 === 0) {
+            alert("odd")
+        } else if (n % 2 === 0) {
+            alert("even")
+        }
     }
-  }
 </script>
 
 <script id="ch0104/04">
-    var Str=String(prompt())
-    var n=Str.charCodeAt()
-    n=parseInt(n)
-    if((n+1)%2===0){
+    var Str = String(prompt())
+    var n = Str.charCodeAt()
+    n = parseInt(n)
+    if ((n + 1) % 2 === 0) {
         alert("YES")
-    }else if(n%2===0){
+    } else if (n % 2 === 0) {
         alert("NO")
     }
 </script>
 
 <script id="ch0104/05">
-    var x=Number(prompt())
-    var y=Number(prompt())
-    if(x>y){
+    var x = Number(prompt())
+    var y = Number(prompt())
+    if (x > y) {
         alert(">")
-    }else if(x===y){
+    } else if (x === y) {
         alert("=")
-    }else if(x<y){
+    } else if (x < y) {
         alert("<")
     }
+</script>
+
+<script id="ch0104/06">
+    var x = Number(prompt())
+    x = parseInt(x)
+    if (x < 1000 && x > 0) {
+        if (x < 100) {
+            alert(1)
+        } else {
+            alert(0)
+        }
+    }
+</script>
+
+<script id="ch0104/07">
+    var x = Number(prompt())
+    var y = Number(prompt())
+    x = parseInt(x)
+    y = parseInt(y)
+    if (x > 0 || y > 0) {
+        if (x >= 10 || y >= 20) {
+            alert("1")
+        } else {
+            alert("0")
+        }
+    }
+</script>
+
+<script id="ch0104/08">
+    var n = Number(prompt())
+    n = parseInt(n)
+    if (n > -1000000 && n < 1000000) {
+        if (n % 3 === 0 && n % 5 === 0) {
+            alert("YES")
+        } else {
+            alert("NO")
+        }
+    }
+</script>
+
+<script id="ch0104/09">
+    var n = Number(prompt())
+    n = parseInt(n)
+    if (n % 3 === 0 && n % 5 === 0 && n % 7 === 0) {
+        alert(3 + " " + 5 + " " + 7)
+    } else if ((n % 3 || n % 5 || n % 7) === 0 && (n % 5 === 0 || n % 7 === 0)) {
+        alert(n)
+    }
+</script>
+
+<script id="ch0104/10">
+    var a = Number(prompt())
+    var b = Number(prompt())
+    a = parseInt(a)
+    b = parseInt(b)
+    if (a < 60 || b < 60) {
+        alert(1)
+    } else {
+        alert(0)
+    }
+</script>
+
+<script id="ch0104/11">
+    var date = Number(prompt())
+    if (date >= 1 && date <= 7) {
+        if (date === 1 || date === 3 || date === 5) {
+            alert("No")
+        } else {
+            alert("Yes")
+        }
+    }
+</script>
+
+<script id="ch0104/12">
+    var start = 27, over = 23, bike = 3.0, foot = 1.2
+    var dis = Number(prompt())
+    if (dis / bike + start + over < dis / foot) {
+        alert("Bike")
+    } else if (dis / bike + start + over > dis / foot) {
+        alert("WALK")
+    } else {
+        alert("ALL")
+    }
+</script>
+
+<script id="ch0104/13">
+    var n = parseFloat(Number(prompt()))
+    var x, y
+    if (n >= 0 && n < 20) {
+        x = n
+        if (x >= 0 && x < 5) {
+            y = -x + 2.5
+            alert(y.toFixed(3))
+        } else if (x >= 5 && x < 10) {
+            y = 2 - 1.5 * (x - 3) * (x - 3)
+            alert(y.toFixed(3))
+        } else if (x >= 10 && x < 20) {
+            y = x / 2 - 1.5
+            alert(y.toFixed(3))
+        }
+    }
+</script>
+<script id="ch0104/14">
+    var weight = Number(prompt())
+    var state = String(prompt())
+    var money
+    switch (state) {
+        case 'y':
+            if (weight <= 1000) {
+                money = 8 + 5
+            } else if (weight > 1000) {
+                if (weight - 1000 <= 500) {
+                    money = 8 + 4 + 5
+                } else {
+                    money = (weight - 1000) / 500 * 4 + 8 + 5
+                }
+            }
+            alert(money)
+            break;
+        case 'n':
+            if (weight <= 1000) {
+                money = 8
+            } else if (weight > 1000) {
+                if (weight - 1000 <= 500) {
+                    money = 8 + 4
+                } else {
+                    money = (weight - 1000) / 500 * 4 + 8
+                }
+            }
+            alert(money)
+            break;
+    }
+</script>
+
+<script id="ch0104/16">
+    var x = Number(prompt())
+    var y = Number(prompt())
+    var z = Number(prompt())
+    if (x + y > z && x + z > y && y + z > x) {
+        alert("yes")
+    } else {
+        alert("No")
+    }
+</script>
+
+<script id="ch0104/17">
+    var i = parseInt(prompt());
+    if (i % 4 === 0 && i % 100 != 0) {
+        console.log(i + "是闰年")
+    }
+    else if (i % 400 === 0 && i % 3200 != 0) {
+        console.log(i + "是闰年")
+    } else {
+        console.log("输入有误")
+    }
+</script>
+
+<script id="ch0104/18">
+    var x = parseInt(Number(prompt()))
+    var y = parseInt(Number(prompt()))
+
+    if (x >= -1 && x <= 1 && y >= -1 && y <= 1) {
+        alert("yes")
+    } else {
+        alert("no")
+    }
+</script>
+
+<script id="ch0104/19">
+    var x = Number(prompt())
+    var y = Number(prompt())
+    var z = String(prompt())
+    if (y === 0) {
+        alert("Divided by zero!")
+    } else {
+        switch (z) {
+            case '+':
+                alert(x + y)
+                break;
+            case '-':
+                alert(x - y)
+                break;
+            case '/':
+                alert(x / y)
+                break;
+            case '*':
+                alert(x * y)
+                break;
+            default:
+                alert("Invalid operator!")
+        }
+
+    }
+
+</script>
+
+<script id="ch0104/20">
+    var a = parseFloat(prompt())
+    var b = parseFloat(prompt())
+    var c = parseFloat(prompt())
+    var x1 = (-b + sqrt(b * b - 4 * a * c)) / (2 * a), x2 = (-b - sqrt(b * b - 4 * a * c)) / (2 * a)
+    alert(sqrt(4))
+</script>
+
+<script id="ch0104/21">
+    var n = parseInt(prompt())
+    var x = parseInt(prompt())
+    var y = parseInt(prompt())
+    n = n - y / x
+    alert(parseInt(n))
 </script>
