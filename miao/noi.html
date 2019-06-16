@@ -536,7 +536,7 @@
     if (n >= 1 && n < 100) {
         for (var i = 0; i < score.length; i++) {
             score[i] = [parseInt(Number(prompt()))]
-            if (score[i] >= 1 && score[i] <101) {
+            if (score[i] >= 1 && score[i] < 101) {
                 if (max < score[i]) {
                     max = score[i]
                 }
@@ -546,4 +546,53 @@
         }
         alert(max)
     }
+</script>
+
+<script id="ch0105/06">
+    var n, max, min = 0, Number
+    n = parseInt(Number(prompt()))
+    for (var i = 0; i < n; i++) {
+        Num = parseInt(Number(prompt()))
+        if (Num >= 0) {
+            if (Num > min) {
+                max = Num
+            } else if (Num <= min) {
+                min = Num
+            }
+        } else {
+            alert("Error")
+        }
+
+    }
+    alert(max - min)
+</script>
+
+<script id="ch0105/07">
+    var n = parseInt(Number(prompt()))
+    var an = 0
+    var bn = 0
+    var cn = 0
+    if (n >= 1 && n <= 17) {
+        for (var i = 0; i < n; i++) {
+            a = parseInt(Number(prompt()))
+            b = parseInt(Number(prompt()))
+            c = parseInt(Number(prompt()))
+            an = parseInt(a + an)
+            bn = parseInt(b + bn)
+            cn = parseInt(c + cn)
+        }
+        alert(an + " " + bn + " " + cn + " " + parseInt(an + bn + cn))
+    }
+</script>
+
+
+<script id="ch0105/08">
+    var n = parseInt(Number(prompt()))
+    var angle
+    var nsum = (n - 2) * 180
+    for (var i = 0; i < n - 1; i++) {
+        angle = parseInt(Number(prompt()))
+        nsum = nsum - angle
+    }
+    alert(nsum)
 </script>
