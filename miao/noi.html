@@ -455,3 +455,68 @@
     n = n - y / x
     alert(parseInt(n))
 </script>
+
+<script id="ch0105/01">
+    var n = parseInt(prompt("请输入学生总数"))
+    var x;
+    var sum = 0;
+    if (n >= 1 && n <= 100) {
+        for (var i = 1; i <= n; i++) {
+
+            x = parseInt(prompt("请输入第" + i + "位学生的年龄"))
+            sum = sum + x
+
+        }
+        alert((sum / n).toFixed(2))
+    }
+
+</script>
+
+<script id="ch0105/02">
+    var Balance, sum = 0
+    for (var i = 1; i < 13; i++) {
+        Balance = parseFloat(Number(prompt("请输入" + i + "月结余")))
+
+        sum = sum + Balance
+
+    }
+    alert((sum / 12).toFixed(2))
+</script>
+
+<script id="ch0105/03">
+    var n = parseInt(prompt("请输入样本总数"))
+    var x;
+    var sum = 0;
+    if (n >= 1 && n <= 100) {
+        for (var i = 1; i <= n; i++) {
+
+            x = parseFloat(prompt("请输入第" + i + "位样本容量"))
+            if (Math.abs(x) <= 1000) {
+                sum = sum + x
+            }
+
+
+        }
+        alert((sum / n).toFixed(4))
+    }
+
+</script>
+
+<script id="ch0105/04">
+    var n = parseInt(prompt("请输入一个整数"))
+    var x;
+    var sum = 0;
+    if (n >= 1 && n <= 10000) {
+        for (var i = 1; i <= n; i++) {
+
+            x = parseFloat(prompt("请输入第" + i + "个整数的值"))
+            if (Math.abs(x) <= 1000) {
+                sum = sum + x
+            }
+
+
+        }
+        alert(sum + " " + ((sum / n).toFixed(4)))
+    }
+
+</script>

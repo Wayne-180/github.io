@@ -35,22 +35,22 @@
     }
 </script> -->
 
-<script id="ch0104/20">
-    var a = parseFloat(prompt())
-    var b = parseFloat(prompt())
-    var c = parseFloat(prompt())
-    var x1 = (-b + Math.sqrt(b * b - 4 * a * c)) / (2 * a), x2 = (-b - Math.sqrt(b * b - 4 * a * c)) / (2 * a)
-    var x1 = x1.toFixed(5), x2 = x2.toFixed(5)
-    var xs = -b / (2 * a)
-    var xx = Math.sqrt((4 * a * c - b * b)) / (2 * a)
-    var Xs = Number(xs).toFixed(5)
-    var Xx = Number(xx).toFixed(5)
-    if (b * b === 4 * a * c) {
-        alert("x1" + "=" + "x2" + x1.toFixed(5))
-    } else if (b * b > 4 * a * c) {
-        alert(("x1=" + x1.toFixed(5) + ";" + "x2=" + x2.toFixed(5) + ",其中x1>x2"))
-    } else if (b * b < 4 * a * c) {
-        alert("x1=" + xs.toFixed(5) + "+" + xx.toFixed(5) + "i;x2=" + xs.toFixed(5) + "-" + xx.toFixed(5) + "i")
+
+<script id="ch0105/04">
+    var n = parseInt(prompt("请输入一个整数"))
+    var x;
+    var sum = 0;
+    if (n >= 1 && n <= 10000) {
+        for (var i = 1; i <= n; i++) {
+
+            x = parseFloat(prompt("请输入第" + i + "个整数的值"))
+            if (Math.abs(x) <= 1000) {
+                sum = sum + x
+            }
+
+
+        }
+        alert(sum + " " + ((sum / n).toFixed(4)))
     }
 
 </script>
