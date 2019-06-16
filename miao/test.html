@@ -35,15 +35,24 @@
     }
 </script> -->
 
-<script id="ch0104/15">
-    var x = Number(prompt())
-    var y = Number(prompt())
-    var z = Number(prompt())
-    if (x > y && x > z) {
-        alert(x)
-    } else if (y > x && y > z) {
-        alert(y)
-    } else if (z > x && z > y) {
-        alert(z)
+<script id="ch0104/11">
+    var date = parseInt(Number(prompt()))
+    if (date >= 1 && date <= 7) {
+        switch (date) {
+            case 1:
+                alert("NO")
+                break;
+            case 3:
+                alert("NO")
+                break;
+            case 5:
+                alert("NO")
+                break;
+            default:
+                alert("YES")
+
+        }
+    }else{
+        alert("输入错误")
     }
 </script>

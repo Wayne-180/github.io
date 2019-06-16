@@ -275,12 +275,21 @@
 </script>
 
 <script id="ch0104/11">
-    var date = Number(prompt())
+    var date = parseInt(Number(prompt()))
     if (date >= 1 && date <= 7) {
-        if (date === 1 || date === 3 || date === 5) {
-            alert("No")
-        } else {
-            alert("Yes")
+        switch (date) {
+            case 1:
+                alert("NO")
+                break;
+            case 3:
+                alert("NO")
+                break;
+            case 5:
+                alert("NO")
+                break;
+            default:
+                alert("YES")
+
         }
     }
 </script>
