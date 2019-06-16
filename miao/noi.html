@@ -345,7 +345,18 @@
             break;
     }
 </script>
-
+<script id="ch0104/15">
+    var x = Number(prompt())
+    var y = Number(prompt())
+    var z = Number(prompt())
+    if (x > y && x > z) {
+        alert(x)
+    } else if (y > x && y > z) {
+        alert(y)
+    } else if (z > x && z > y) {
+        alert(z)
+    }
+</script>
 <script id="ch0104/16">
     var x = Number(prompt())
     var y = Number(prompt())
@@ -360,12 +371,12 @@
 <script id="ch0104/17">
     var i = parseInt(prompt());
     if (i % 4 === 0 && i % 100 != 0) {
-        console.log(i + "是闰年")
+        console.log("Y")
     }
     else if (i % 400 === 0 && i % 3200 != 0) {
-        console.log(i + "是闰年")
+        console.log("Y")
     } else {
-        console.log("输入有误")
+        console.log("N")
     }
 </script>
 
