@@ -527,3 +527,23 @@
     }
 
 </script>
+
+<script id="ch0105/05">
+
+    var n = parseInt(Number(prompt()))
+    var score = new Array(n)
+    var max = 0
+    if (n >= 1 && n < 100) {
+        for (var i = 0; i < score.length; i++) {
+            score[i] = [parseInt(Number(prompt()))]
+            if (score[i] >= 1 && score[i] <101) {
+                if (max < score[i]) {
+                    max = score[i]
+                }
+            } else {
+                alert("输入有误")
+            }
+        }
+        alert(max)
+    }
+</script>

@@ -36,28 +36,22 @@
 </script> -->
 
 
-<script id="ch0105/04">
-    var n = parseInt(prompt("请输入一个整数"))
-    var x;
-    var sum = 0;
-    var state = true;
-    if (n >= 1 && n <= 10000) {
-        for (var i = 1; i <= n; i++) {
+<script id="ch0105/05">
 
-            x = parseFloat(prompt("请输入第" + i + "个整数的值"))
-            if (Math.abs(x) <= 10000) {
-                sum = sum + x
+    var n = parseInt(Number(prompt()))
+    var score = new Array(n)
+    var max = 0
+    if (n >= 1 && n < 100) {
+        for (var i = 0; i < score.length; i++) {
+            score[i] = [parseInt(Number(prompt()))]
+            if (score[i] >= 1 && score[i] <101) {
+                if (max < score[i]) {
+                    max = score[i]
+                }
             } else {
-                state = false
+                alert("输入有误")
             }
-
         }
-        if (state === true) {
-            alert(sum + " " + ((sum / n).toFixed(4)))
-        } else {
-            alert(state)
-        }
-
+        alert(max)
     }
-
 </script>
