@@ -40,17 +40,24 @@
     var n = parseInt(prompt("请输入一个整数"))
     var x;
     var sum = 0;
+    var state = true;
     if (n >= 1 && n <= 10000) {
         for (var i = 1; i <= n; i++) {
 
             x = parseFloat(prompt("请输入第" + i + "个整数的值"))
-            if (Math.abs(x) <= 1000) {
+            if (Math.abs(x) <= 10000) {
                 sum = sum + x
+            } else {
+                state = false
             }
 
-
         }
-        alert(sum + " " + ((sum / n).toFixed(4)))
+        if (state === true) {
+            alert(sum + " " + ((sum / n).toFixed(4)))
+        } else {
+            alert(state)
+        }
+
     }
 
 </script>
