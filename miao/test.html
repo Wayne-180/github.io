@@ -56,14 +56,12 @@
     alert(max - min)
 </script> -->
 
-<script id="ch0105/09">
-    var n = parseInt(Number(prompt()))
-    var m = parseInt(Number(prompt()))
-    var sum = 0
-    for (n; n <= m; n++) {
-        if (n % 2 != 0) {
-            sum += n
-        }
+<script id="ch0105/15">
+    var R = parseInt(Number(prompt()))
+    var M = parseInt(Number(prompt()))
+    var Y = parseInt(Number(prompt()))
+    for(var i=0;i<Y;i++){
+        M+=(M*(R/100))
     }
-    alert(sum)
+    alert(parseInt(M))
 </script>
