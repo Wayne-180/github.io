@@ -690,3 +690,30 @@
     }
     alert(parseInt(M))
 </script>
+
+<script id="ch0105/16">
+    var N = parseInt(Number(prompt()))
+    var K = parseInt(Number(prompt()))
+    var moeny = 0
+    var M = 0
+    var add = 0
+    var sum = 0
+    for (M; M < 999; M++) {
+
+        add = Number(1 + (K / 100 * M))
+
+        if ((M * N - 200 * add) > 0) {
+            M += 1
+            if (M <= 20) {
+                alert(M)
+                break;
+            } else {
+                alert("Impossible")
+                break;
+            }
+
+        } else {
+            alert("Impossible")
+        }
+    }
+</script>
