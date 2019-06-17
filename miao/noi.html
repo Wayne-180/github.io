@@ -717,3 +717,41 @@
         }
     }
 </script>
+
+<script id="ch0105/17">
+    var k = parseInt(Number(prompt()))
+    function fibonacci(n) {
+        if (n == 0 || n == 1)
+            return n;
+        return fibonacci(n - 1) + fibonacci(n - 2);
+    }
+    var kvalue = fibonacci(k)
+    alert(kvalue)
+</script>
+<script id="ch0105/43">
+    var n = parseInt(Number(prompt()))
+     
+</script>
+
+<script id="ch0105/44">
+    var Num = parseInt(Number(prompt()))
+    var nvalue = 1
+    for (var i = 1; i < Num; i++) {
+        nvalue += 2
+        if (nvalue > 7) {
+            if (nvalue % 3 === 0 || nvalue % 5 === 0 || nvalue % 7 === 0) {
+                i--
+            }
+        }
+
+    }
+
+    alert(nvalue)
+</script>
+<script id="ch0105/45">
+    var Day = parseInt(Number(prompt()))
+    var money = 0
+    for (var i = 0; i <= Day; i++) {
+        alert(i)
+    }
+</script>
