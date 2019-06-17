@@ -36,17 +36,34 @@
 </script> -->
 
 
+
+<!-- <script id="ch0105/06">
+    var n, max, min = 0, Number
+    n = parseInt(Number(prompt()))
+    for (var i = 0; i < n; i++) {
+        Num = parseInt(Number(prompt()))
+        if (Num >= 0) {
+            if (Num > min) {
+                max = Num
+            } else if (Num <= min) {
+                min = Num
+            }
+        } else {
+            alert("Error")
+        }
+
+    }
+    alert(max - min)
+</script> -->
+
 <script id="ch0105/09">
     var n = parseInt(Number(prompt()))
     var m = parseInt(Number(prompt()))
-    if (n >= 0 && m >= 0 && n <= 300 & m <= 300) {
+    var sum = 0
+    for (n; n <= m; n++) {
         if (n % 2 != 0) {
-            for (n; n <= m; n++) {
-                n = n + 2
-            }
-            alert(n+m)
-        } else {
-
+            sum += n
         }
     }
+    alert(sum)
 </script>
