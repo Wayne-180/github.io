@@ -103,20 +103,21 @@
 </script> -->
 
 
-<script id="ch0105/24">
-    var n = Number(prompt())
-    var sum=0
-    for(var i=0;i<n;i++){
-        var miny= Number(prompt())
-        var maxy= Number(prompt())
-        if(miny>=90&&miny<=140&&maxy>=60&&maxy<=90){
-            sum+=1
-        }else{
-            sum-=1
-            if(sum<0){
-                sum=0
-            }
-        }
+<script id="sort">
+    var a = 0, b = 0, c = 0, max = 0, min = 0
+    a = parseInt(Number(prompt()))
+    b = parseInt(Number(prompt()))
+    c = parseInt(Number(prompt()))
+    if (a > b && a > c) {
+        alert(a + "," + b + "," + c)
+    } else if (b > a && b > c) {
+        a = b
+        b = a
+        alert(a + "," + b + "," + c)
+    } else if (c > a && c > b) {
+        a=c
+        c=a
+        alert(a + "," + b + "," + c)
     }
-    alert(sum)
+
 </script>
