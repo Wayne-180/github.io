@@ -961,20 +961,67 @@
 </script>
 
 <script id="sort">
-    var a = 0, b = 0, c = 0, max = 0, min = 0
+    var a = 0, b = 0, c = 0, max = 0;
     a = parseInt(Number(prompt()))
     b = parseInt(Number(prompt()))
     c = parseInt(Number(prompt()))
-    if (a > b && a > c) {
-        alert(a + "," + b + "," + c)
-    } else if (b > a && b > c) {
+    if (a > b) {
+        max = a
         a = b
-        b = a
-        alert(a + "," + b + "," + c)
-    } else if (c > a && c > b) {
+        b = max
+    }
+    if (a > c) {
+        max = a
         a = c
-        c = a
-        alert(a + "," + b + "," + c)
+        c = max
+    }
+    if (b > c) {
+        max = b
+        b = c
+        c = max
+    }
+    alert(a + "," + b + "," + c)
+
+</script>
+
+<script id="narcissistic">
+    var x, a = 0, b = 0, c = 0
+    x = parseInt(Number(prompt()))
+    if (x >= 100 && x <= 999) {
+        a = (x % 100)
+        if (a >= 10) {
+            a = a % 10
+        }
+
+        b = (x % 100)
+        b = parseInt(b / 10)
+        c = parseInt(x / 100)
+        if (x === Math.pow(a, 3) + Math.pow(b, 3) + Math.pow(c, 3)) {
+            alert("YES")
+        } else {
+            alert("NO")
+        }
     }
 
+</script>
+
+<script id="narcissistics">
+    var x, a = 0, b = 0, c = 0
+    for (x = 0; x < 1000; x++) {
+
+
+        if (x >= 100 && x <= 999) {
+            a = (x % 100)
+            if (a >= 10) {
+                a = a % 10
+            }
+
+            b = (x % 100)
+            b = parseInt(b / 10)
+            c = parseInt(x / 100)
+            if (x === Math.pow(a, 3) + Math.pow(b, 3) + Math.pow(c, 3)) {
+                alert(x)
+            }
+        }
+    }
 </script>
