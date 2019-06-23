@@ -176,30 +176,32 @@
     alert(isPalindrome(121))
 
 </script> -->
-<script id="complete-numbers">
-    var checkPerfectNumber = function (num) {
-        var y = 0
-        if (num <= 0) {
-            return false
-        } else {
-            for (var i = 1; i < num; i++) {
-                if (num % i === 0) {
-                    y += i
-                }
+<script id="primes">
+    var isprime = function (x) {
+        if (x > 1) {
+            if (x === 2 || x === 3 || x === 5 || x === 7) {
 
-            }
-            if (y === num) {
-                return num
+                return x
             } else {
-                return false
+                if (x % 2 > 0) {
+                    if (x % 3 != 0 && x % 5 != 0 && x % 7 != 0) {
+                        return x
+                    } else {
+                        return 0
+                    }
+                } else {
+                    return 0
+                }
             }
         }
 
     };
-    for (var a = 1; a < 1000; a++) {
-        if (checkPerfectNumber(a) != false) {
-            alert(checkPerfectNumber(a))
+    for (var i = 1; i < 1000; i++) {
+        if (isprime(i) > 0) {
+            console.log(isprime(i))
         }
 
     }
+
+
 </script>
