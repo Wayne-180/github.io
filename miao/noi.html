@@ -1217,8 +1217,20 @@
         }
         return lcf
     }
-
+    lcf = islcf(a, b)
     lcm = (a * b) / islcf(a, b)
-    alert(islcf(a, b))
-    alert(lcm)
+    console.log(lcf)
+    console.log(lcm)
+</script>
+<script id="sqrt">
+    function sqrt(n) {
+        var x = 2
+        x = x - (x * x - n) / (2 * x)
+        x = x - (x * x - n) / (2 * x)
+        x = x - (x * x - n) / (2 * x)
+        x = x - (x * x - n) / (2 * x)
+        return x
+    }
+    var n = Number(prompt())
+    alert(sqrt(n).toFixed(3))
 </script>
