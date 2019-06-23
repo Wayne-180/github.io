@@ -1043,3 +1043,37 @@
         }
     }
 </script>
+
+<script id="palindrom">
+    var isPalindrome = function (x) {
+        x = "" + x
+        var bool
+        var arry = new Array(x.length)
+        for (var a = 0; a < x.length; a++) {
+            arry[a] = x.substr(a, 1)
+        }
+        if (parseInt(arry.length) === 1) {
+            bool = true
+        } else {
+            var j = parseInt((arry.length / 2))
+            var front = 0
+            var behind = 0
+            for (var i = 0; i < j; i++) {
+                front = parseInt(arry[i])
+                behind = parseInt(arry[arry.length - (i + 1)])
+                if (front === behind) {
+                    if (i === j - 1) {
+                        bool = "YES"
+                    }
+                } else {
+                    bool = "NO"
+                    break
+                }
+            }
+        }
+        return bool
+    }
+    var y=Number(prompt())
+    alert(isPalindrome(y))
+
+</script>

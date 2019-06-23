@@ -114,7 +114,7 @@
         alert("No")
     }
 </script> -->
-<script id="palindrom">
+<!-- <script id="palindrom">
     var x = (String(prompt()))
     var arry = new Array(x.length)
     for (var i = 0; i < x.length; i++) {
@@ -130,24 +130,82 @@
                 break
             }
         }
-    // if (arry.length % 2 !== 0) {
-    //     for (var i = 0; i < (arry.length / 2); i++) {
-    //         if (parseInt(arry[i]) === parseInt(arry[arry.length - (i + 1)])) {
-    //             alert("YES")
-    //         } else {
-    //             alert("NO")
-    //             break
-    //         }
-    //     }
-    // } 
-    // else {
-    //     for (var i = 0; i < (arry.length / 2); i++) {
-    //         if (parseInt(arry[i]) === parseInt(arry[arry.length - (i + 1)])) {
-    //             alert("YES")
-    //         } else {
-    //             alert("NO")
-    //             break
-    //         }
-    //     }
-    // }
-</script>
+    if (arry.length % 2 !== 0) {
+        for (var i = 0; i < (arry.length / 2); i++) {
+            if (parseInt(arry[i]) === parseInt(arry[arry.length - (i + 1)])) {
+                alert("YES")
+            } else {
+                alert("NO")
+                break
+            }
+        }
+    } 
+    else {
+        for (var i = 0; i < (arry.length / 2); i++) {
+            if (parseInt(arry[i]) === parseInt(arry[arry.length - (i + 1)])) {
+                alert("YES")
+            } else {
+                alert("NO")
+                break
+            }
+        }
+    }
+</script> -->
+
+<!-- <script id="palindrom">
+    var isPalindrome = function (x = 121) {
+        var bool
+        var arry = new Array(x.length)
+        for (var i = 0; i < x.length; i++) {
+            arry[i] = x.substr(i, 1)
+        }
+        for (var i = 0; i < (arry.length / 2); i++) {
+
+            if (parseInt(arry[i]) === parseInt(arry[arry.length - (i + 1)])) {
+                if (i = arry.length - 1) {
+                    bool = true
+                }
+            } else {
+                bool = false
+                break;
+            }
+        }
+        return bool
+    };
+
+    alert(isPalindrome(121))
+
+</script> -->
+<script id="palindrom">
+        var isPalindrome = function (x) {
+            x = "" + x
+            var bool
+            var arry = new Array(x.length)
+            for (var a = 0; a < x.length; a++) {
+                arry[a] = x.substr(a, 1)
+            }
+            if (parseInt(arry.length) === 1) {
+                bool = true
+            } else {
+                var j = parseInt((arry.length / 2))
+                var front = 0
+                var behind = 0
+                for (var i = 0; i < j; i++) {
+                    front = parseInt(arry[i])
+                    behind = parseInt(arry[arry.length - (i + 1)])
+                    if (front === behind) {
+                        if (i === j - 1) {
+                            bool = "YES"
+                        }
+                    } else {
+                        bool = "NO"
+                        break
+                    }
+                }
+            }
+            return bool
+        }
+        var y=Number(prompt())
+        alert(isPalindrome(y))
+    
+    </script>
