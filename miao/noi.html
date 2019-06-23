@@ -1151,20 +1151,23 @@
 
 <script id="prime">
     var x = Number(prompt())
-    if (x === 2 || x === 3 || x === 5 || x === 7) {
+    if (x > 1) {
+        if (x === 2 || x === 3 || x === 5 || x === 7) {
 
-        alert("YES")
-    } else {
-        if (x % 2 > 0) {
-            if (x % 3 != 0 && x % 5 != 0 && x % 7 != 0) {
-                alert("YES")
+            alert("YES")
+        } else {
+            if (x % 2 > 0) {
+                if (x % 3 != 0 && x % 5 != 0 && x % 7 != 0) {
+                    alert("YES")
+                } else {
+                    alert("No")
+                }
             } else {
                 alert("No")
             }
-        } else {
-            alert("No")
         }
     }
+
 
 </script>
 <script id="primes">
