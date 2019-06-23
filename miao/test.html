@@ -177,22 +177,23 @@
 
 </script> -->
 <script id="weekday">
-    var y = 2019 % 100
-    var m = 2
-    var d = 1
-    var c = parseInt(y / 100)
-    if (m === 1) {
-        m = 13
-        y = y - 1
-    } else if (m === 2) {
-        m = 14
-        y = y - 1
-    }
-    var w = (y + parseInt(y / 4) + parseInt(c / 4) - 2 * c + parseInt(26 * (m + 1) / 10) + d - 1)
-    if (w < 1) {
-        w = (w % 7 + 7) % 7
-    } else {
-        w = w % 7
-    }
-    alert(w)
-</script>
+        var y = Number(prompt())
+        y = y % 100
+        var m = Number(prompt())
+        var d = 1
+        var c = parseInt(y / 100)
+        if (m === 1) {
+            m = 13
+            y = y - 1
+        } else if (m === 2) {
+            m = 14
+            y = y - 1
+        }
+        var w = (y + parseInt(y / 4) + parseInt(c / 4) - 2 * c + parseInt(26 * (m + 1) / 10) + d - 1)
+        if (w < 1) {
+            w = (w % 7 + 7) % 7
+        } else {
+            w = w % 7
+        }
+        alert(w)
+    </script>

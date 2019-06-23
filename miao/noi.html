@@ -1079,8 +1079,9 @@
 </script>
 
 <script id="weekday">
-    var y = 2019 % 100
-    var m = 2
+    var y = Number(prompt())
+    y = y % 100
+    var m = Number(prompt())
     var d = 1
     var c = parseInt(y / 100)
     if (m === 1) {
