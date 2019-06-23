@@ -1192,10 +1192,6 @@
             }
         }
     }
-
-
-
-
 </script>
 
 <script id="itob">
@@ -1205,7 +1201,24 @@
 </script>
 
 <script id="lcf&lcm">
-    var x = Number(prompt())
-    var y = Number(prompt())
+    var a = Number(prompt())
+    var b = Number(prompt())
+    var lcf = 0, lcm = 0
+    var islcf = function (a, b) {
+        while (true) {
+            if ((a = a % b) === 0) {
+                lcf = b
+                break
+            }
+            if ((b = b % a) === 0) {
+                lcf = a
+                break
+            }
+        }
+        return lcf
+    }
 
+    lcm = (a * b) / islcf(a, b)
+    alert(islcf(a, b))
+    alert(lcm)
 </script>
