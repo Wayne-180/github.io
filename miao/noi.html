@@ -1099,3 +1099,52 @@
     }
     alert(w)
 </script>
+
+<script id="complete-number">
+    var x = Number(prompt())
+    var y = 0
+    if (x <= 0) {
+        alert("NO")
+    } else {
+        for (var i = 1; i < x; i++) {
+            if (x % i === 0) {
+                y += i
+            }
+
+        }
+    }
+
+    if (y === x) {
+        alert("YES")
+    } else {
+        alert("NO")
+    }
+</script>
+
+<script id="complete-numbers">
+        var checkPerfectNumber = function (num) {
+            var y = 0
+            if (num <= 0) {
+                return false
+            } else {
+                for (var i = 1; i < num; i++) {
+                    if (num % i === 0) {
+                        y += i
+                    }
+    
+                }
+                if (y === num) {
+                    return num
+                } else {
+                    return false
+                }
+            }
+    
+        };
+        for (var a = 1; a < 1000; a++) {
+            if (checkPerfectNumber(a) != false) {
+                alert(checkPerfectNumber(a))
+            }
+    
+        }
+    </script>
