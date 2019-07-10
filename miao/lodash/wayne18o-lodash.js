@@ -8,7 +8,7 @@ var wayne18o = {
         }
         var start = 0, end = size
         while (i < sum) {
-            result[i] = [array.slice(start, end)]
+            result[i]= array.slice(start, end)
             start += size
             end += size
             i++
