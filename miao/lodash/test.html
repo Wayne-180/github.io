@@ -1,14 +1,31 @@
 <script>
     var chunk = function (array, size) {
-        var ary = array
-        if (size < ary.length) {
-            ary = [ary.slice(0, size), ary.slice(size, ary.length)]
-        } else {
-            return ary
+        //常量 循环需要的次数
+        const sum = Math.ceil(array.length / size)
+        //返回的数组
+        var result = []
+        //返回数组的指针
+        var i = 0
+        //判断是否为数组，size是否传入，size是否<1 都返回一个空数组
+        if (!array.length || !size || size < 1) {
+            return []
         }
-
-        return ary
+        //silice开始与结束的位置
+        var start = 0, end = size
+        while (i < sum) {
+            //result的第i项为，slice返回的数组，第一次循环从0开始，到size结束
+            result[i] = [array.slice(start, end)]
+            //赋值完成后将下一次开始的位置改为上一次结束的位置
+            start += size
+            //下次结束的位置要加上size的长度
+            end += size
+            i++
+        }
+        return result
     }
+    var array = [1, 2, 3, 4, 5], size = 4
+    debugger
+    console.log(chunk(array, size));
 
 
 </script>

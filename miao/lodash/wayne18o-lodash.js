@@ -1,12 +1,18 @@
 var wayne18o = {
     chunk: function (array, size) {
-        var ary = array
-        if (size < ary.length) {
-            ary = [ary.slice(0, size), ary.slice(size, ary.length)]
-        } else {
-            return ary
+        const sum = Math.ceil(array.length / size)
+        var result = []
+        var i = 0
+        if (!array.length || !size || size < 1) {
+            return []
         }
-
-        return ary
+        var start = 0, end = size
+        while (i < sum) {
+            result[i] = [array.slice(start, end)]
+            start += size
+            end += size
+            i++
+        }
+        return result
     },
 }
