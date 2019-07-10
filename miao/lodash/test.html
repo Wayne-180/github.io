@@ -14,7 +14,7 @@
         var start = 0, end = size
         while (i < sum) {
             //result的第i项为，slice返回的数组，第一次循环从0开始，到size结束
-            result[i] = [array.slice(start, end)]
+            result[i] = array.slice(start, end)
             //赋值完成后将下一次开始的位置改为上一次结束的位置
             start += size
             //下次结束的位置要加上size的长度
