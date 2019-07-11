@@ -17,11 +17,10 @@ var wayne18o = {
     },
     compact: function (array) {
         var result = []
-        for (let i = 0, j = 0; i < array.length; i++) {
+        for (let i = 0; i < array.length; i++) {
             var num = array[i]
-            if (num != false && num != "" && num != 0 && num != undefined && num != null) {
-                result[j] = num
-                j++
+            if (Boolean(num)) {
+                result.push(num)
             }
         }
         return result
