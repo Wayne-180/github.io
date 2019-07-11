@@ -1,0 +1,15 @@
+<script>
+    var compact = function (array) {
+        var result = []
+        for (let i = 0, j = 0; i < array.length; i++) {
+            var num = array[i]
+            if (num != false && num != "" && num != 0 && num != undefined && num != undefined) {
+                result[j] = num
+                j++
+            }
+        }
+        return result
+    }
+    var array = [0, 1, false, 2, '', 3]
+    console.log(compact(array))
+</script>
