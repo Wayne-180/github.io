@@ -19,7 +19,7 @@ var wayne18o = {
         var result = []
         for (let i = 0, j = 0; i < array.length; i++) {
             var num = array[i]
-            if (num != false && num != "" && num != 0 && num != undefined && num != undefined) {
+            if (num != false && num != "" && num != 0 && num != undefined && num != null) {
                 result[j] = num
                 j++
             }
