@@ -1,0 +1,18 @@
+<script>
+    var difference = function (array, ...args) {
+        var i = 0
+        while (i < args.length) {
+            for (let j = 0; j < args[i].length; j++) {
+                for (args[i][j] in array) {
+                    array.slice(i,1)
+                }
+            }
+            j = 0
+            i++
+        }
+        return args
+    }
+    debugger
+    console.log(difference([2, 1], [2, 3]));
+
+</script>
