@@ -25,4 +25,18 @@ var wayne18o = {
         }
         return result
     },
+    concat:function (array, ...args) {
+        var result = args
+        for (let i = 0; i < result.length; i++) {
+            if (result[i].length) {
+                for (let j = 0; j < result[i].length; j++) {
+                    array.push(result[i][j])
+                }
+            } else {
+                array.push(result[i])
+            }
+
+        }
+        return array
+    },
 }
