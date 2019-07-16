@@ -51,4 +51,11 @@ var wayne18o = {
     identity: function (...args) {
         return args[0]
     },
+    every: function (collection, fun) {
+        for (var i in collection) {
+            if (!fun(collection[i], i, collection)) {
+                return false
+            }
+        }
+    },
 }
