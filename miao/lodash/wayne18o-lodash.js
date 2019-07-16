@@ -52,14 +52,11 @@ var wayne18o = {
         return args[0]
     },
     every: function (collection, predicate) {
-        // for (var i in collection) {
-        //     if (!predicate(collection[i], i, collection)) {
-        //         return false
-        //     }
-        // }
-        // return true
-        return collection.reduce((result, item, val, collection) => {
-            return result && predicate(item, val, collection)
-        }, true)
+        for (let element of collection) {
+            if (predicate(element) === false) {
+                return false;
+            }
+        }
+        return true;
     },
 }
