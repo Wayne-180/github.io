@@ -52,14 +52,6 @@ var wayne18o = {
         return args[0]
     },
     every: function (collection, predicate) {
-        var negate = function (fun) {
-            return function (...args) {
-                return !fun(...args)
-            }
-        }
-        var some = function (collection, predicate) {
-            return !every(collection, negate(predicate))
-        }
-        return !some(collection, negate(predicate))
+       
     },
 }
