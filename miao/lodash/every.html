@@ -2,11 +2,14 @@
     //通过 predicate（断言函数） 检查 collection（集合）中的 所有 元素是否都返回真值。一旦 predicate（断言函数） 返回假值，迭代就马上停止。predicate（断言函数）调用三个参数： (value, index|key, collection)。 
     var every = function (collection, fun) {
         for (var i in collection) {
-            if (!fun(collection[i], i, collection)) {
+            if (!fun) {
                 return false
             }
         }
         return true
     }
-    var a = every([true, 1, null, "yes"])
+    debugger
+    var a = every([true, 1, null, "yes"],Boolean())
+    console.log(a);
+    
 </script>

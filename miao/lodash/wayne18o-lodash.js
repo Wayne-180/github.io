@@ -53,9 +53,10 @@ var wayne18o = {
     },
     every: function (collection, fun) {
         for (var i in collection) {
-            if (!fun(collection[i], i, collection)) {
+            if (!fun) {
                 return false
             }
         }
+        return true
     },
 }
