@@ -48,7 +48,7 @@ var wayne18o = {
         }
         return initialval
     },
-    identity: function (args) {
+    identity: function (...args) {
         return args[0]
     },
 }
