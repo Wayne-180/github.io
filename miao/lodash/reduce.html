@@ -1,11 +1,39 @@
 <script>
-    function reduce(ary, fun, initialval) {
-        for (var i = 0; i < ary.length; i++) {
-            initialval = fun(initialval, ary[i])
-        }
+    function reduce(collection, fun, initialval) {
+
+        // if (Array.isArray(collection)) {
+            if (arguments.length === 2) {
+                initialval = 0
+            }
+            for (var i in collection) {
+                initialval = fun(initialval, collection[i],i)
+            }
+        // }
+        //  else {
+        //     for (var j in collection) {
+        //         if (arguments.length === 2) {
+        //             initialval = {}
+        //         }
+        //         initialval = fun(initialval, collection[j], j)
+        //     }
+
+        // }
         return initialval
     }
-    var a = reduce([1, 2, 3], (a, b) => a + b, 0)
+    debugger
+    // 输入：reduce({ "a": 1, "b": 2, "c": 1 }, "function(result,  value,  key)  {  \n        (result[value]  ||  (result[value]  =   [])).push(key);  \n        return  result;\n      }", {})
+    // 输出：{ }
+    // 期望：{ "1": ["a", "c"], "2": ["b"] }
+    var a = reduce({ "a": 1, "b": 2, "c": 1 }, function (result, value, key) {
+        (result[value] || (result[value] = [])).push(key);
+        return result;
+    }, {})
+   // var a = reduce([1, 2, 3, 4, 5, 6, 7], function (a, b) { return a + b })
     console.log(a);
 
+
+    // var a = function (result, value, key) {
+    //     (result[value] || (result[value] = [])).push(key);
+    //     return result;
+    // }
 </script>

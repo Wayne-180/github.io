@@ -25,7 +25,7 @@ var wayne18o = {
         }
         return result
     },
-    concat:function (array, ...args) {
+    concat: function (array, ...args) {
         var result = args
         for (let i = 0; i < result.length; i++) {
             if (result[i].length) {
@@ -39,9 +39,12 @@ var wayne18o = {
         }
         return array
     },
-    reduce:function (ary, fun, initialval) {
-        for (var i = 0; i < ary.length; i++) {
-            initialval = fun(initialval, ary[i])
+    reduce: function (collection, fun, initialval) {
+        if (arguments.length === 2) {
+            initialval = 0
+        }
+        for (var i in collection) {
+            initialval = fun(initialval, collection[i], i)
         }
         return initialval
     },
