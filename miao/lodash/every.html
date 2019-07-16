@@ -1,15 +1,28 @@
 <script>
-    //通过 predicate（断言函数） 检查 collection（集合）中的 所有 元素是否都返回真值。一旦 predicate（断言函数） 返回假值，迭代就马上停止。predicate（断言函数）调用三个参数： (value, index|key, collection)。 
+    //通过 predicate（断言函数） 检查 collection（集合）中的 所有 元素是否都返回真值。一旦 predicate（断言函数） 返回假值，迭代就马上停止。predicate（断言函数）调用三个参数： (value, index|key, collection)。
+    function negate(fun) {
+        return function (...args) {
+            return !fun(...args)
+        }
+    }
     var every = function (collection, predicate) {
-        for (var i in collection) {
-            if (!predicate(collection[i], i, collection)) {
-                return false
+        var negate = function (fun) {
+            return function (...args) {
+                return !fun(...args)
             }
         }
-        return true
+        var some = function (collection, predicate) {
+            return !every(collection, negate(predicate))
+        }
+        return !some(collection, negate(predicate))
+
         // return collection.reduce((result, item, val, collection) => {
         //     return result && predicate(item, val, collection)
         // }, true)
+    }
+    var some = function (collection, predicate) {
+
+        return !every(collection, negate(predicate))
     }
     debugger
     var a = every([true, 1, null, "yes"], Boolean())
