@@ -39,4 +39,10 @@ var wayne18o = {
         }
         return array
     },
+    reduce:function (ary, fun, initialval) {
+        for (var i = 0; i < ary.length; i++) {
+            initialval = fun(initialval, ary[i])
+        }
+        return initialval
+    },
 }

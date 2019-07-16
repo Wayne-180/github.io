@@ -1,0 +1,11 @@
+<script>
+    function reduce(ary, fun, initialval) {
+        for (var i = 0; i < ary.length; i++) {
+            initialval = fun(initialval, ary[i])
+        }
+        return initialval
+    }
+    var a = reduce([1, 2, 3], (a, b) => a + b, 0)
+    console.log(a);
+
+</script>
