@@ -62,4 +62,15 @@ var wayne18o = {
     isArguments: function (val) {
         return !(typeof val != 'function')
     },
+    difference: function (array, value) {
+        var temp = []
+        for (let i = 0, j = 0; i < array.length; i++) {
+            if (value.indexOf(array[i]) == -1) {
+                temp[j] = array[i]
+                j++
+            }
+        }
+        array = temp
+        return array
+    },
 }
