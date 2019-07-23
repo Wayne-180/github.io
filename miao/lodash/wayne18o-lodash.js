@@ -54,7 +54,7 @@ var wayne18o = {
     every: function (collection, predicate) {
 
     },
-    isarraylike: function (val) {
+    isArrayLike: function (val) {
 
         return (typeof val != 'function') && val.length >= 0 && val.length < Number.MAX_SAFE_INTEGER
 
