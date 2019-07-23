@@ -52,6 +52,11 @@ var wayne18o = {
         return args[0]
     },
     every: function (collection, predicate) {
-       
+
+    },
+    isarraylike: function (val) {
+
+        return (typeof val != 'function') && val.length >= 0 && val.length < Number.MAX_SAFE_INTEGER
+
     },
 }
