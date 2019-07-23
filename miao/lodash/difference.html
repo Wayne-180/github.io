@@ -1,8 +1,10 @@
 <script>
-    var difference = function (array, value) {
+    //[].concat.apply([],arr)
+    var difference = function (array, ...args) {
+        var arg = args.join().split(',').map(Number)
         var temp = []
         for (let i = 0, j = 0; i < array.length; i++) {
-            if (value.indexOf(array[i])==-1) {
+            if (arg.indexOf(array[i]) == -1) {
                 temp[j] = array[i]
                 j++
             }
@@ -10,7 +12,4 @@
         array = temp
         return array
     }
-    debugger
-    console.log(difference([2, 1], [2, 3]));
-
 </script>

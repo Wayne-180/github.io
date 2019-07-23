@@ -62,10 +62,11 @@ var wayne18o = {
     isArguments: function (val) {
         return !(typeof val != 'function')
     },
-    difference: function (array, value) {
+    difference: function (array, ...args) {
+        var arg = args.join().split(',').map(Number)
         var temp = []
         for (let i = 0, j = 0; i < array.length; i++) {
-            if (value.indexOf(array[i]) == -1) {
+            if (arg.indexOf(array[i]) == -1) {
                 temp[j] = array[i]
                 j++
             }
