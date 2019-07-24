@@ -75,36 +75,6 @@ var wayne18o = {
         return array
     },
     differenceBy: function (array, args, iteratee) {
-        if (iteratee) {
-            switch (typeof iteratee) {
-                case 'function':
-                    var values = []
-                    var ary = []
-                    for (let i = 0; i < arg.length; i++) {
-                        values[i] = iteratee(arg[i])
-                    }
-                    for (let i = 0; i < array.length; i++) {
-                        ary[i] = iteratee(array[i])
-                    }
-                    difference(ary, values)
-                    break;
-                case 'string':
-                    break;
-            }
-        } else {
-            difference(array, args)
-        }
-        var difference = function (array, args) {
-            var arg = args.join().split(',').map(Number)
-            var temp = []
-            for (let i = 0, j = 0; i < array.length; i++) {
-                if (arg.indexOf(array[i]) == -1) {
-                    temp[j] = array[i]
-                    j++
-                }
-            }
-            array = temp
-            return array
-        }
+        
     },
 }
