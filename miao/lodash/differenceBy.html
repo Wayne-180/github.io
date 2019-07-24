@@ -4,40 +4,49 @@
      * @Date: 2019-07-23 22:18:53 
      * @Desc:array数组 value需要对比的数据 iteratee迭代器  
      */
-    var differenceBy = function (array,...args, iteratee) {
-        var difference = function (array, arg) {
-            var temp = []
-            for (let i = 0, j = 0; i < array.length; i++) {
-                if (arg.indexOf(array[i]) == -1) {
-                    temp[j] = array[i]
-                    j++
+    var differenceBy = function (array, ...args) {
+        var iteratee = args[args.length - 1]
+        args.pop()
+        switch (typeof iteratee) {
+            case 'function':
+                var arg = args.join().split(',').map(Number)
+                var temp = []
+                for (let i = 0; i < arg.length; i++) {
+                    arg[0] = iteratee(arg[0])
                 }
-            }
-            array = temp
-            return array
-        }
-        if (iteratee) {
-            switch (typeof iteratee) {
-                case 'function':
-                    var arg = args.join(',').split(',').map(Number)
-                    for (let i = 0; i < arg.length; i++) {
-                        arg[i] = iteratee(arg[i])
+                for (let j = 0, x = 0; j < array.length; j++) {
+                    if (arg.indexOf(iteratee(array[j])) == -1) {
+                        temp[x] = iteratee(array[j])
+                        x++
                     }
-                    for (let i = 0; i < array.length; i++) {
-                        array[i] = iteratee(array[i])
+                }
+                return array = temp
+            case 'string':
+                var arg = args[0][0]
+                var temp = []
+                for (let i = 0, k = 0, j = 0; i < array.length; i++) {
+                    if (arg[iteratee] != array[i][iteratee]) {
+                        temp[k] = array[i]
+                        j++
                     }
-                    return difference(array, arg)
-                    break;
-                case 'string':
-                    break;
-            }
-        } else {
-            return difference(array, args)
+                }
+                return array = temp
+            default:
+                var arg = args.join().split(',').map(Number)
+                var temp = []
+                for (let i = 0, j = 0; i < array.length; i++) {
+                    if (arg.indexOf(array[i]) == -1) {
+                        temp[j] = array[i]
+                        j++
+                    }
+                }
+                array = temp
+                return array
         }
-
     }
+
     debugger;
-    console.log(differenceBy([1, 2, 3, 4, 5, 6, 7, 8], [1, 3], [4, 8], [6], it => it))
+    console.log(differenceBy([{ "x": 2 }, { "x": 1 }], [{ "x": 1 }], "x"))
 
 
 </script>
