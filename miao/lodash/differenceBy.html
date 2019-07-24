@@ -5,25 +5,6 @@
      * @Desc:array数组 value需要对比的数据 iteratee迭代器  
      */
     var differenceBy = function (array, args, iteratee) {
-        if (iteratee) {
-            switch (typeof iteratee) {
-                case 'function':
-                    var values = []
-                    var ary = []
-                    for (let i = 0; i < arg.length; i++) {
-                        values[i] = iteratee(arg[i])
-                    }
-                    for (let i = 0; i < array.length; i++) {
-                        ary[i] = iteratee(array[i])
-                    }
-                    difference(ary, values)
-                    break;
-                case 'string':
-                    break;
-            }
-        } else {
-            difference(array, args)
-        }
         var difference = function (array, args) {
             var arg = args.join().split(',').map(Number)
             var temp = []
@@ -36,5 +17,26 @@
             array = temp
             return array
         }
+        if (iteratee) {
+            switch (typeof iteratee) {
+                case 'function':
+                    var values = []
+                    var ary = []
+                    var arg = args.join().split(',').map(Number)
+                    for (let i = 0; i < arg.length; i++) {
+                        values[i] = iteratee(arg[i])
+                    }
+                    for (let i = 0; i < array.length; i++) {
+                        ary[i] = iteratee(array[i])
+                    }
+                    return difference(ary, values)
+                    break;
+                case 'string':
+                    break;
+            }
+        } else {
+            return difference(array, args)
+        }
+
     }
 </script>
