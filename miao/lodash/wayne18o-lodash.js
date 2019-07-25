@@ -98,7 +98,7 @@ var wayne18o = {
                 for (let i = 0, k = 0, j = 0; i < array.length; i++) {
                     if (arg[iteratee] != array[i][iteratee]) {
                         temp[k] = array[i]
-                        j++
+                        k++
                     }
                 }
                 return array = temp
