@@ -122,12 +122,8 @@ var wayne18o = {
                 if (!(comparator(array[i], args[j]))) {
                     temp.push(array[i])
                 }
-
-
             }
         }
-
         return array = temp
-
     }
 }
