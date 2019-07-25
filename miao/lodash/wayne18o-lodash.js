@@ -119,8 +119,12 @@ var wayne18o = {
         var obj = Object.keys(args[0])
         var temp = []
         for (let i = 0, j = 0; i < array.length; i++) {
-            temp[j] = comparator(array[i], args[0])
-            j++
+            if (!(comparator(array[i], args[0]))) {
+                temp[j] = comparator(array[i], args[0])
+                j++
+            }
+
+
         }
         return array = temp
 
