@@ -16,20 +16,6 @@
 
         }
         return array = temp
-        let i = 0
-        var temp = []
-        while (array.length > i) {
-
-            for (let j = 0; j < args.length; j++) {
-                if (!comparator(array[i], args[j])) {
-                    temp.push(array[i])
-                }
-            }
-            i++
-
-           
-        }
-        return array=temp
     }
     differenceWith([{ "x": 1, "y": 2 }, { "x": 2, "y": 1 }], [{ "x": 1, "y": 2 }], function () { })
 </script>

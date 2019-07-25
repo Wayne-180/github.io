@@ -121,7 +121,7 @@ var wayne18o = {
         var comparator = args.pop()
         while (array.length > i) {
             for (let j = 0; j < args.length; j++) {
-                if (!comparator(array[i], args[j])) {
+                if (!(comparator(array[i], args[j]))) {
                     temp.push(array[i])
                 }
             }
