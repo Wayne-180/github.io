@@ -74,7 +74,7 @@ var wayne18o = {
         array = temp
         return array
     },
-    differenceBy:function (array, ...args) {
+    differenceBy: function (array, ...args) {
         var iteratee = args[args.length - 1]
         switch (typeof iteratee) {
             case 'function':
@@ -115,4 +115,12 @@ var wayne18o = {
                 return array
         }
     },
+    differenceWith: function (array, args, comparator) {
+        var obj = Object.keys(args[0])
+        for (let i = 0; i < array.length; i++) {
+            comparator(array[i], args[0])
+        }
+        return array
+
+    }
 }
