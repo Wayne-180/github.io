@@ -117,10 +117,12 @@ var wayne18o = {
     },
     differenceWith: function (array, args, comparator) {
         var obj = Object.keys(args[0])
-        for (let i = 0; i < array.length; i++) {
-            comparator(array[i], args[0])
+        var temp = []
+        for (let i = 0, j = 0; i < array.length; i++) {
+            temp[j] = comparator(array[i], args[0])
+            j++
         }
-        return array
+        return array = temp
 
     }
 }
