@@ -74,7 +74,7 @@ var wayne18o = {
         array = temp
         return array
     },
-    differenceBy: function (array, ...args) {
+    function (array, ...args) {
         var iteratee = args[args.length - 1]
         switch (typeof iteratee) {
             case 'function':
@@ -82,11 +82,11 @@ var wayne18o = {
                 var arg = args.join().split(',').map(Number)
                 var temp = []
                 for (let i = 0; i < arg.length; i++) {
-                    arg[0] = iteratee(arg[0])
+                    arg[i] = iteratee(arg[i])
                 }
                 for (let j = 0, x = 0; j < array.length; j++) {
                     if (arg.indexOf(iteratee(array[j])) == -1) {
-                        temp[x] = iteratee(array[j])
+                        temp[x] = array[j]
                         x++
                     }
                 }
