@@ -115,18 +115,19 @@ var wayne18o = {
                 return array
         }
     },
-    differenceWith: function (array, ...args) {
-        let i = 0
+    differenceWith: function (array, args, comparator) {
         var temp = []
-        var comparator = args.pop()
-        while (array.length > i) {
-            for (let j = 0; j < args.length; j++) {
+        for (let j = 0; j < args.length; j++) {
+            for (let i = 0; i < array.length; i++) {
                 if (!(comparator(array[i], args[j]))) {
                     temp.push(array[i])
                 }
+
+
             }
-            i++
         }
+
         return array = temp
+
     }
 }

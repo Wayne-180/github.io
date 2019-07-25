@@ -1,21 +1,14 @@
 <script>
-    var differenceWith = function (array, args, comparator) {
-        console.log(args[0]);
-
-        var obj = Object.keys(args[0])
+    var differenceWith = function (array, ...args) {
+        let i = 0
         var temp = []
-        for (let i = 0, j = 0; i < array.length; i++) {
-            if (!(comparator(array[i], args[0]))) {
-                temp[j] = array[i]
-                j++
-            }
-
-
-        }
-        for (let i = 0; i < args.length; i++) {
-
+        var comparator = args.pop()
+        var k
+        while (true) {
+            if(array)
         }
         return array = temp
     }
+    debugger;
     differenceWith([{ "x": 1, "y": 2 }, { "x": 2, "y": 1 }], [{ "x": 1, "y": 2 }], function () { })
 </script>
