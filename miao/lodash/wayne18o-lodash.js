@@ -120,7 +120,7 @@ var wayne18o = {
         var temp = []
         for (let i = 0, j = 0; i < array.length; i++) {
             if (!(comparator(array[i], args[0]))) {
-                temp[j] = comparator(array[i], args[0])
+                temp[j] = array[i]
                 j++
             }
 
