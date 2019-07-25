@@ -74,7 +74,7 @@ var wayne18o = {
         array = temp
         return array
     },
-    function (array, ...args) {
+    differenceBy:function (array, ...args) {
         var iteratee = args[args.length - 1]
         switch (typeof iteratee) {
             case 'function':
