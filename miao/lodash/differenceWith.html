@@ -1,13 +1,35 @@
 <script>
     var differenceWith = function (array, args, comparator) {
+        console.log(args[0]);
+
         var obj = Object.keys(args[0])
-        var temp=[]
-        for (let i = 0,j=0; i < array.length; i++) {
-            temp[j]=comparator(array[i],args[0])
-            j++
+        var temp = []
+        for (let i = 0, j = 0; i < array.length; i++) {
+            if (!(comparator(array[i], args[0]))) {
+                temp[j] = array[i]
+                j++
+            }
+
+
+        }
+        for (let i = 0; i < args.length; i++) {
+
+        }
+        return array = temp
+        let i = 0
+        var temp = []
+        while (array.length > i) {
+
+            for (let j = 0; j < args.length; j++) {
+                if (!comparator(array[i], args[j])) {
+                    temp.push(array[i])
+                }
+            }
+            i++
+
+           
         }
         return array=temp
-
     }
-    differenceWith([{ "x": 1, "y": 2 }, { "x": 2, "y": 1 }], [{ "x": 1, "y": 2 }], function (n, t) { return Nt(n, t); })
+    differenceWith([{ "x": 1, "y": 2 }, { "x": 2, "y": 1 }], [{ "x": 1, "y": 2 }], function () { })
 </script>
