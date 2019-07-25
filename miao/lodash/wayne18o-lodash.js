@@ -103,7 +103,7 @@ var wayne18o = {
                 }
                 return array = temp
             default:
-                var arg = args[0][0]
+                var arg = args.join().split(',').map(Number)
                 var temp = []
                 for (let i = 0, j = 0; i < array.length; i++) {
                     if (arg.indexOf(array[i]) == -1) {
