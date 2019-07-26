@@ -126,7 +126,7 @@ var wayne18o = {
         }
         return array = temp
     },
-    drop:function (array, n = 1) {
+    drop: function (array, n = 1) {
         // var temp = []
         // for (; n < array.length; n++) {
         //     temp.push(array[n])
@@ -134,4 +134,11 @@ var wayne18o = {
         // return array = temp
         return array.slice(n)
     },
+    dropRight: function (array, n = 1) {
+        while (n > 0) {
+            array.pop
+            n--
+        }
+        return array
+    }
 }
