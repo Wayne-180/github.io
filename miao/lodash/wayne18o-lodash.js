@@ -135,8 +135,8 @@ var wayne18o = {
         return array.slice(n)
     },
     dropRight: function (array, n = 1) {
-        while (n > 0) {
-            array.pop
+        while (n>0) {
+            array.pop()
             n--
         }
         return array
