@@ -125,5 +125,12 @@ var wayne18o = {
             }
         }
         return array = temp
-    }
+    },
+    drop:function (array, n = 1) {
+        var temp = []
+        for (; n < array.length; n++) {
+            temp.push(array[n])
+        }
+        return array = temp
+    },
 }
