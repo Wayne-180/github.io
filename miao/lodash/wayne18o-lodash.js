@@ -171,4 +171,7 @@ var wayne18o = {
             return wayne18o.isMatch(obj, src)
         }
     },
+    toPath: function (str) {
+        return str.split(/\.|\[|\]./g)
+    },
 }
