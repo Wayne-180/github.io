@@ -153,16 +153,18 @@ var wayne18o = {
         }
         for (var key in obj) {
             if (typeof src[key] == 'object' && src[key] !== null) {
-                if (!ismatch(obj[key], src[key])) {
+                if (!isMatch(obj[key], src[key])) {
                     return false
+                } else {
+                    return true
                 }
             } else {
-                if (obj[key] != src[key]) {
+                if (obj[key] != src[key] && src[key] !== undefined) {
                     return false
                 }
             }
-            return true
         }
+        return true
 
     }
 }
