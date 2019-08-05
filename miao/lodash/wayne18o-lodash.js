@@ -146,5 +146,23 @@ var wayne18o = {
     },
     dropRightWhile: function (array, predicate) {
 
+    },
+    isMatch: function (obj, src) {
+        if (obj === src) {
+            return true
+        }
+        for (var key in obj) {
+            if (typeof src[key] == 'object' && src[key] !== null) {
+                if (!ismatch(obj[key], src[key])) {
+                    return false
+                }
+            } else {
+                if (obj[key] != src[key]) {
+                    return false
+                }
+            }
+
+        }
+        return true
     }
 }
