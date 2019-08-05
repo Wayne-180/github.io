@@ -5,17 +5,25 @@
         }
         for (var key in obj) {
             if (typeof src[key] == 'object' && src[key] !== null) {
-                if (!ismatch(obj[key], src[key])) {
+                if (!isMatch(obj[key], src[key])) {
                     return false
+                } else {
+                    return true
                 }
             } else {
-                if (obj[key] != src[key]) {
+                if (obj[key] != src[key] && src[key] !== undefined) {
                     return false
                 }
             }
-
         }
         return true
     }
-
+//     输入：isMatch({"a":1,"b":2},{"b":2})
+// 输出/期望：true
+// =================
+// 输入：isMatch({"a":1,"b":2},{"b":1})
+// 输出/期望：false
+// =================
+// 输入：isMatch({"a":1,"b":{"c":1}},{"b":{"c":1}})
+// 输出/期望：true
 </script>
