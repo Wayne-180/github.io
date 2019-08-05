@@ -167,8 +167,9 @@ var wayne18o = {
         return true
     },
     matches: function (src) {
-        return function (obj) {
-            return isMatch(obj, src)
-        }
+        // return function (obj) {
+        //     return isMatch(obj, src)
+        // }
+        console.log(this)
     },
 }
