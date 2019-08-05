@@ -165,6 +165,10 @@ var wayne18o = {
             }
         }
         return true
-
-    }
+    },
+    matches: function (src) {
+        return function (obj) {
+            return isMatch(obj, src)
+        }
+    },
 }

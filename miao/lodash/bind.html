@@ -1,0 +1,14 @@
+<script>
+    function bind(f, thisArg, ...fixArgs) {
+        return function (...args) {
+            var acturalArgs = [...fixArgs]
+            for (var i = 0; i < acturalArgs.length; i++) {
+                if (acturalArgs[i] === window) {
+                    acturalArgs[i] = args.shift()
+                }
+            }
+            acturalArgs.push(...args)
+            return f.apply(thisArg, acturalArgs)
+        }
+    }
+</script>

@@ -1,7 +1,8 @@
 <script>
+    var matches = src => bind(isMatch, null, _, src)
     function matches(src) {
         return function (obj) {
-            return isMatch(obj,src)
+            return isMatch(obj, src)
         }
     }
 </script>
