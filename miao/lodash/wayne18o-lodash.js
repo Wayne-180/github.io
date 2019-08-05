@@ -174,4 +174,7 @@ var wayne18o = {
     toPath: function (str) {
         return str.split(/\.|\[|\]./g)
     },
+    isEqual: function (val, other) {
+
+    },
 }

@@ -1,0 +1,7 @@
+<script>
+    function matchesProperty(path, srcValue) {
+        return function (obj) {
+            return isEqual(get(obj, path) === value)
+        }
+    }
+</script>

@@ -1,0 +1,53 @@
+<script>
+    function isEqual(val, other) {
+        if (val === other) {
+            return true
+        }
+        if (typeof val == typeof other && (val !== undefined && other !== undefined)) {
+            for (let i in val) {
+                if (val[i] !== other[i]) {
+                    return false
+                }
+            }
+            return true
+        } else {
+            return false
+        }
+        return false
+    }
+   debugger; console.log(isEqual({ "a": 1 }, { "a": 1 }))
+    console.log(isEqual(1, 2))
+    console.log(isEqual(2, 2))
+    console.log(isEqual("foo", "foo"))
+    console.log(isEqual([1, 2, 3], [1, 2, 3]))
+    console.log(isEqual([1, 2], { "0": 1, "1": 2, "length": 2 }))
+    console.log(isEqual([{}, {}], [{}, {}]))
+    console.log(isEqual({ "a": 1, "b": 2 }, { "a": 1, "b": 2, "c": 3 }))
+    console.log(isEqual({ "a": 1, "b": 2 }, { "b": 2, "a": 1 }))
+// 输入：isEqual({"a":1},{"a":1})
+// 输出/期望：true
+// =================
+// 输入：isEqual(1,2)
+// 输出/期望：false
+// =================
+// 输入：isEqual(2,2)
+// 输出/期望：true
+// =================
+// 输入：isEqual("foo","foo")
+// 输出/期望：true
+// =================
+// 输入：isEqual([1,2,3],[1,2,3])
+// 输出/期望：true
+// =================
+// 输入：isEqual([1,2],{"0":1,"1":2,"length":2})
+// 输出/期望：false
+// =================
+// 输入：isEqual([{},{}],[{},{}])
+// 输出/期望：true
+// =================
+// 输入：isEqual({"a":1,"b":2},{"a":1,"b":2,"c":3})
+// 输出/期望：false
+// =================
+// 输入：isEqual({"a":1,"b":2},{"b":2,"a":1})
+// 输出/期望：true
+</script>
