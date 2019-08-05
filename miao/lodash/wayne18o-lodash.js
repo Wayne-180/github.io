@@ -147,13 +147,13 @@ var wayne18o = {
     dropRightWhile: function (array, predicate) {
 
     },
-    isMatch: function isMatch(obj, src) {
+    isMatch: function (obj, src) {
         if (obj === src) {
             return true
         }
         for (var key in obj) {
             if (typeof src[key] == 'object' && src[key] !== null) {
-                if (!isMatch(obj[key], src[key])) {
+                if (!wayne_18o.isMatch(obj[key], src[key])) {
                     return false
                 } else {
                     return true
