@@ -161,8 +161,8 @@ var wayne18o = {
                     return false
                 }
             }
-
+            return true
         }
-        return true
+
     }
 }
