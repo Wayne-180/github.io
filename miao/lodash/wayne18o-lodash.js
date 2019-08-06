@@ -146,12 +146,12 @@ var wayne18o = {
     },
     dropRightWhile: function (array, predicate) {
         predicate = this.iteratee(predicate)
-        for (let i = array.length - 1; i >= 0; i--) {
+        for (var i = 0; i < array.length; i++) {
             if (!predicate(array[i])) {
-                array.slice(i)
+                return array.slice(i)
             }
         }
-        return array
+        return array.slice(i)
     },
     isMatch: function isMatch(obj, src) {
         if (obj === src) {
