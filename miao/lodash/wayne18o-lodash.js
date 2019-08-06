@@ -145,7 +145,13 @@ var wayne18o = {
 
     },
     dropRightWhile: function (array, predicate) {
-
+        predicate = this.iteratee(predicate)
+        for (let i = array.length - 1; i >= 0; i--) {
+            if (!predicate(array[i])) {
+                array.pop()
+            }
+        }
+        return array
     },
     isMatch: function isMatch(obj, src) {
         if (obj === src) {
