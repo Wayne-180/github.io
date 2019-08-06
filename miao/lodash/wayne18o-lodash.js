@@ -147,8 +147,10 @@ var wayne18o = {
     dropRightWhile: function (array, predicate) {
         predicate = this.iteratee(predicate)
         for (var i = array.length - 1; i > 0; i--) {
-            if (!predicate(array[i])) {
-                return array.slice(0, i)
+            if (predicate(array[i])) {
+                array.pop()
+            } else {
+                return array
             }
         }
         // return array.slice(i)
