@@ -202,7 +202,7 @@ var wayne18o = {
                             return false
                         }
                     } else {
-                        return isEqual(val[key], other[key])
+                        return wayne18o.isEqual(val[key], other[key])
                     }
                 }
                 return true
@@ -213,7 +213,7 @@ var wayne18o = {
                             return false
                         }
                     } else {
-                        return isEqual(val[key], other[key])
+                        return wayne18o.isEqual(val[key], other[key])
                     }
                 }
                 return true
