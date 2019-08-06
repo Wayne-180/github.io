@@ -146,12 +146,12 @@ var wayne18o = {
     },
     dropRightWhile: function (array, predicate) {
         predicate = this.iteratee(predicate)
-        for (var i = 0; i < array.length; i++) {
+        for (var i = array.length - 1; i > 0; i--) {
             if (!predicate(array[i])) {
-                return array.slice(i)
+                return array.slice(0, i)
             }
         }
-        return array.slice(i)
+        // return array.slice(i)
     },
     isMatch: function isMatch(obj, src) {
         if (obj === src) {
@@ -178,6 +178,10 @@ var wayne18o = {
         }
     },
     toPath: function (str) {
+        //如果str是数组的话要转成字符串
+        if (Object.prototype.toString(str) === '[object Array]') {
+            return str.map(it => it.toString())
+        }
         return str.split(/\.|\[|\]./g)
     },
     isEqual: function (val, other) {
