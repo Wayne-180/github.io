@@ -232,12 +232,6 @@ var wayne18o = {
     },
     get: function (obj, path, defaultVal) {
         var path = wayne18o.toPath(path)
-        for (var i = 0; i < path.length; i++) {
-            if (obj == undefined) {
-                return defaultVal
-            }
-            obj = obj[path[i]]
-        }
         for (var key of path) {
             if (obj[key] == undefined) {
                 return defaultVal
