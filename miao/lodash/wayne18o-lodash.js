@@ -233,5 +233,10 @@ var wayne18o = {
             obj = obj[path[i]]
         }
         return obj
+    },
+    property: function (path) {
+        return function (obj) {
+            return wayne18o.get(obj, path)
+        }
     }
 }
