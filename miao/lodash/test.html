@@ -7,8 +7,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="lodash.min.js"></script>
     <script>
-        console.log(_.isEqual([{ a: 1, b: 2 }], [{ a: 1, b: 2 }]));
-        console.log(_.isEqual({ a: [1, 2] }, { a: [1, 2] }))
+        var users = [
+            { 'user': 'barney', 'active': true },
+            { 'user': 'fred', 'active': false },
+            { 'user': 'pebbles', 'active': false }
+        ];
+        // console.log(_.isEqual([{ a: 1, b: 2 }], [{ a: 1, b: 2 }]));
+        // console.log(_.isEqual({ a: [1, 2] }, { a: [1, 2] }))
+        console.log(_.dropRightWhile(users, { 'user': 'pebbles', 'active': false }));
+        console.log(_.dropRightWhile(users, ['active', false]));
+        console.log(_.dropRightWhile(users, 'active'));
+
     </script>
     <title>Document</title>
 </head>

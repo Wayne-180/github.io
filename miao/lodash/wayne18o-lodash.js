@@ -148,7 +148,7 @@ var wayne18o = {
         predicate = this.iteratee(predicate)
         for (let i = array.length - 1; i >= 0; i--) {
             if (!predicate(array[i])) {
-                array.pop()
+                array.slice(i)
             }
         }
         return array
