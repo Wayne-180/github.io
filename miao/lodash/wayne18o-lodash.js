@@ -178,7 +178,6 @@ var wayne18o = {
         }
     },
     toPath: function (str) {
-        //如果str是数组的话要转成字符串
         if (Object.prototype.toString.call(str) === '[object Array]') {
             return str.map(it => it.toString())
         }
