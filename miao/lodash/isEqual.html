@@ -1,29 +1,59 @@
 <script>
     function isEqual(val, other) {
-        if (val === other) {
-            return true
-        }
-        if (typeof val == typeof other && (val !== undefined && other !== undefined)) {
-            for (let i in val) {
-                if (val[i] !== other[i]) {
-                    return false
-                }
-            }
-            return true
-        } else {
+        //判断长度是否一样
+        if (Object.keys(val).length !== Object.keys(other).length) {
             return false
         }
-        return false
+        //判断类型
+        var type1 = Object.prototype.toString.call(val)
+        var type2 = Object.prototype.toString.call(other)
+        var bool = type1 == type2
+        //类型不一样直接返回
+        if (!bool) {
+            return false
+        }
+        switch (type1) {
+            case '[object Number]':
+                return val === other
+            case '[object String]':
+                return val === other
+            case '[object Object]':
+                for (let key in val) {
+                    if (other[key] == undefined) {
+                        return false
+                    }
+                    if (typeof val[key] !== 'object') {
+                        if (val[key] !== other[key]) {
+                            return false
+                        }
+                    } else {
+                        return isEqual(val[key], other[key])
+                    }
+                }
+                return true
+            case '[object Array]':
+                for (let key in val) {
+                    if (typeof val[key] !== 'object') {
+                        if (val[key] !== other[key]) {
+                            return false
+                        }
+                    } else {
+                        return isEqual(val[key], other[key])
+                    }
+                }
+                return true
+        }
     }
-   debugger; console.log(isEqual({ "a": 1 }, { "a": 1 }))
-    console.log(isEqual(1, 2))
-    console.log(isEqual(2, 2))
-    console.log(isEqual("foo", "foo"))
-    console.log(isEqual([1, 2, 3], [1, 2, 3]))
-    console.log(isEqual([1, 2], { "0": 1, "1": 2, "length": 2 }))
-    console.log(isEqual([{}, {}], [{}, {}]))
-    console.log(isEqual({ "a": 1, "b": 2 }, { "a": 1, "b": 2, "c": 3 }))
-    console.log(isEqual({ "a": 1, "b": 2 }, { "b": 2, "a": 1 }))
+    debugger; console.log(isEqual({ a: [1] }, { a: [1] }))
+    // console.log(isEqual({ "a": 1 }, { "a": 1 }))
+    // console.log(isEqual(1, 1))
+    // debugger;console.log(isEqual(1, 2))
+    // console.log(isEqual("foo", "foo"))
+    // console.log(isEqual([1, 2, 3], [1, 2, 3]))
+    // console.log(isEqual([1, 2], { "0": 1, "1": 2, "length": 2 }))
+    // console.log(isEqual([{}, {}], [{}, {}]))
+    // console.log(isEqual({ "a": 1, "b": 2 }, { "a": 1, "b": 2, "c": 3 }))
+    // console.log(isEqual({ "a": 1, "b": 2 }, { "b": 2, "a": 1 }))
 // 输入：isEqual({"a":1},{"a":1})
 // 输出/期望：true
 // =================

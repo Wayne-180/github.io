@@ -175,6 +175,48 @@ var wayne18o = {
         return str.split(/\.|\[|\]./g)
     },
     isEqual: function (val, other) {
-
+        //判断长度是否一样
+        if (Object.keys(val).length !== Object.keys(other).length) {
+            return false
+        }
+        //判断类型
+        var type1 = Object.prototype.toString.call(val)
+        var type2 = Object.prototype.toString.call(other)
+        var bool = type1 == type2
+        //类型不一样直接返回
+        if (!bool) {
+            return false
+        }
+        switch (type1) {
+            case '[object Number]':
+                return val === other
+            case '[object String]':
+                return val === other
+            case '[object Object]':
+                for (let key in val) {
+                    if (other[key] == undefined) {
+                        return false
+                    }
+                    if (typeof val[key] !== 'object') {
+                        if (val[key] !== other[key]) {
+                            return false
+                        }
+                    } else {
+                        return isEqual(val[key], other[key])
+                    }
+                }
+                return true
+            case '[object Array]':
+                for (let key in val) {
+                    if (typeof val[key] !== 'object') {
+                        if (val[key] !== other[key]) {
+                            return false
+                        }
+                    } else {
+                        return isEqual(val[key], other[key])
+                    }
+                }
+                return true
+        }
     },
 }
