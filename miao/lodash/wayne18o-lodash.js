@@ -225,7 +225,7 @@ var wayne18o = {
         }
     },
     get: function (obj, path, defaultVal) {
-        var path = wayne_18o.toPath(path)
+        var path = wayne18o.toPath(path)
         for (var i = 0; i < path.length; i++) {
             if (obj == undefined) {
                 return defaultVal
