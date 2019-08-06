@@ -238,6 +238,12 @@ var wayne18o = {
             }
             obj = obj[path[i]]
         }
+        for (var key of path) {
+            if (obj[key] == undefined) {
+                return defaultVal
+            }
+            obj = obj[key]
+        }
         return obj
     },
     property: function (path) {
