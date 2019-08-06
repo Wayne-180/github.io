@@ -238,5 +238,17 @@ var wayne18o = {
         return function (obj) {
             return wayne18o.get(obj, path)
         }
-    }
+    },
+    iteratee: function (val) {
+        if (typeof val == 'string') {
+            return this.property(val)
+        }
+        if (Array.isArray(val)) {
+            return this.matchesProperty(val)
+        }
+        if (typeof val == 'object') {
+            return this.matches(val)
+        }
+        return val
+    },
 }
