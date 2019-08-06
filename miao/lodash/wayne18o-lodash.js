@@ -219,4 +219,19 @@ var wayne18o = {
                 return true
         }
     },
+    matchesProperty: function (path, value) {
+        return function (obj) {
+            return wayne18o.isEqual(get(obj, path), value)
+        }
+    },
+    get: function (obj, path, defaultVal) {
+        var path = wayne_18o.toPath(path)
+        for (var i = 0; i < path.length; i++) {
+            if (obj == undefined) {
+                return defaultVal
+            }
+            obj = obj[path[i]]
+        }
+        return obj
+    }
 }

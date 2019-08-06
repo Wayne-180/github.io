@@ -1,7 +1,7 @@
 <script>
-    function matchesProperty(path, srcValue) {
+    function matchesProperty(path, value) {
         return function (obj) {
-            return isEqual(get(obj, path) === value)
+            return isEqual(get(obj, path), value)
         }
     }
 </script>
