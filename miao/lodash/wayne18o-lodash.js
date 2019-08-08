@@ -154,8 +154,13 @@ var wayne18o = {
         //     }
         // }
         // // return array.slice(i)
-        var arr = reverse(array)
-        return reverse(dropWhile(arr, predicate))
+        predicate = this.iteratee(predicate)
+        for (var i = array.length - 1; i >= 0; i--) {
+            if (!predicate(array[i])) {
+                return array.slice(0, i + 1)
+            }
+        }
+        return array.slice(0, i + 1)
     },
     isMatch: function isMatch(obj, src) {
         if (obj === src) {
