@@ -244,6 +244,10 @@ var wayne18o = {
         }
     },
     matchesProperty: function (path, value) {
+        if (value == undefined) {
+            value = path.pop()
+        }
+        var path = this.toPath(path)
         return function (obj) {
             return wayne18o.isEqual(get(obj, path), value)
         }
