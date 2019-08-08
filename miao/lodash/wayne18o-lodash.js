@@ -193,11 +193,12 @@ var wayne18o = {
         return str.split(/\.|\[|\]./g)
     },
     isEqual: function (val, other) {
-        if (!Boolean(val) && !Boolean(other)) {
+        if (!Boolean(val) || !Boolean(other)) {
             return true
-        } else if (!Boolean(val) || !Boolean(other)) {
-            return false
         }
+        // else if (!Boolean(val) || !Boolean(other)) {
+        //     return false
+        // }
         //判断长度是否一样
         if (Object.keys(val).length !== Object.keys(other).length) {
             return false
