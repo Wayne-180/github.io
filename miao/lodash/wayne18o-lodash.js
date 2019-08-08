@@ -251,7 +251,7 @@ var wayne18o = {
         //     obj = obj[key]
         // }
         // return obj
-        var path = toPath(path)
+        var path = this.toPath(path)
         for (var i = 0; i < path.length; i++) {
             if (obj === undefined) {
                 return defaultVal
