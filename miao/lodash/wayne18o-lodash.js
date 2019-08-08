@@ -243,12 +243,20 @@ var wayne18o = {
         }
     },
     get: function (obj, path, defaultVal) {
-        var path = wayne18o.toPath(path)
-        for (var key of path) {
-            if (obj[key] == undefined) {
+        // var path = wayne18o.toPath(path)
+        // for (var key of path) {
+        //     if (obj[key] == undefined) {
+        //         return defaultVal
+        //     }
+        //     obj = obj[key]
+        // }
+        // return obj
+        var path = toPath(path)
+        for (var i = 0; i < path.length; i++) {
+            if (obj === undefined) {
                 return defaultVal
             }
-            obj = obj[key]
+            obj = obj[path[i]]
         }
         return obj
     },

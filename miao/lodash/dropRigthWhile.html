@@ -1,5 +1,39 @@
 <script>
-    var iteratee = function (val) {
+    // var iteratee = function (val) {
+    //     if (typeof val == 'string') {
+    //         return property(val)
+    //     }
+    //     if (Array.isArray(val)) {
+    //         return matchesProperty(val)
+    //     }
+    //     if (typeof val == 'object') {
+    //         return matches(val)
+    //     }
+    //     return val
+    // }
+    // var dropRightWhile = function (array, predicate) {
+    //     predicate = iteratee(predicate)
+    //     for (var i = array.length - 1; i > 0; i--) {
+    //         if (predicate(array[i])) {
+    //             array.pop()
+    //         } else {
+    //             return array
+    //         }
+    //     }
+    // }
+    // var dropWhile = function (array, predicate) {
+    //     predicate = iteratee(predicate)
+    // }
+    function dropRightWhile(array, predicate) {
+        predicate = iteratee(predicate)
+        for (var i = array.length - 1; i >= 0; i--) {
+            if (!predicate(array[i])) {
+                return array.slice(0, i + 1)
+            }
+        }
+        return array.slice(0, i + 1)
+    }
+    function iteratee(val) {
         if (typeof val == 'string') {
             return property(val)
         }
@@ -11,17 +45,84 @@
         }
         return val
     }
-    var dropRightWhile = function (array, predicate) {
-        predicate = iteratee(predicate)
-        for (var i = array.length - 1; i > 0; i--) {
-            if (predicate(array[i])) {
-                array.pop()
-            } else {
-                return array
-            }
+    function matchesProperty(path, value) {
+        return function (obj) {
+            return isEqual(get(obj, path), value)
         }
     }
-    var dropWhile = function (array, predicate) {
-        predicate = iteratee(predicate)
+    function get(obj, path, defaultVal) {
+        // var path = toPath(path)
+        // for (var key of path) {
+        //     if (obj[key] == undefined) {
+        //         return defaultVal
+        //     }
+        //     obj = obj[key]
+        // }
+        // return obj
+        var path = toPath(path)
+        for (var i = 0; i < path.length; i++) {
+            if (obj === undefined) {
+                return defaultVal
+            }
+            obj = obj[path[i]]
+        }
+        return obj
     }
+    function property(path) {
+        return function (obj) {
+            return get(obj, path)
+        }
+    }
+    function isEqual(val, other) {
+        //判断长度是否一样
+        if (Object.keys(val).length !== Object.keys(other).length) {
+            return false
+        }
+        //判断类型
+        var type1 = Object.prototype.toString.call(val)
+        var type2 = Object.prototype.toString.call(other)
+        var bool = type1 == type2
+        //类型不一样直接返回
+        if (!bool) {
+            return false
+        }
+        switch (type1) {
+            case '[object Number]':
+                return val === other
+            case '[object String]':
+                return val === other
+            case '[object Object]':
+                for (let key in val) {
+                    if (other[key] == undefined) {
+                        return false
+                    }
+                    if (typeof val[key] !== 'object') {
+                        if (val[key] !== other[key]) {
+                            return false
+                        }
+                    } else {
+                        return isEqual(val[key], other[key])
+                    }
+                }
+                return true
+            case '[object Array]':
+                for (let key in val) {
+                    if (typeof val[key] !== 'object') {
+                        if (val[key] !== other[key]) {
+                            return false
+                        }
+                    } else {
+                        return isEqual(val[key], other[key])
+                    }
+                }
+                return true
+        }
+    }
+    function toPath(str) {
+        if (Object.prototype.toString.call(str) === '[object Array]') {
+            return str.map(it => it.toString())
+        }
+        return str.split(/\.|\[|\]./g)
+    }
+    debugger; console.log(dropRightWhile([{ "user": "barney", "active": true }, { "user": "fred", "active": false }, { "user": "pebbles", "active": false }], ["active", false])) 
 </script>
