@@ -244,23 +244,11 @@ var wayne18o = {
         }
     },
     matchesProperty: function (path, value) {
-        if (value == undefined) {
-            value = path.pop()
-        }
-        var path = this.toPath(path)
         return function (obj) {
             return wayne18o.isEqual(get(obj, path), value)
         }
     },
     get: function (obj, path, defaultVal) {
-        // var path = wayne18o.toPath(path)
-        // for (var key of path) {
-        //     if (obj[key] == undefined) {
-        //         return defaultVal
-        //     }
-        //     obj = obj[key]
-        // }
-        // return obj
         var path = this.toPath(path)
         for (var i = 0; i < path.length; i++) {
             if (obj === undefined) {

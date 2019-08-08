@@ -46,6 +46,10 @@
         return val
     }
     function matchesProperty(path, value) {
+        if (value == undefined) {
+            value = path.pop()
+        }
+        //var path = this.toPath(path)
         return function (obj) {
             return isEqual(get(obj, path), value)
         }
