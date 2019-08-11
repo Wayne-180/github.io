@@ -264,9 +264,9 @@ var wayne18o = {
         return ary
     },
     findIndex: function (ary, predicate, index) {
-        const predicate = this.iteratee(predicate)
+        var pre = this.iteratee(predicate)
         for (let i = index; i < ary.length; i++) {
-            if (predicate(ary[i], i, ary)) {
+            if (pre(ary[i], i, ary)) {
                 return i
             }
         }
