@@ -271,5 +271,5 @@ var wayne18o = {
             }
         }
         return -1
-    }
+    },
 }
