@@ -145,22 +145,7 @@ var wayne18o = {
 
     },
     dropRightWhile: function (array, predicate) {
-        // predicate = this.iteratee(predicate)
-        // for (var i = array.length - 1; i > 0; i--) {
-        //     if (predicate(array[i])) {
-        //         array.pop()
-        //     } else {
-        //         return array
-        //     }
-        // }
-        // // return array.slice(i)
-        predicate = this.iteratee(predicate)
-        for (var i = array.length - 1; i >= 0; i--) {
-            if (!predicate(array[i])) {
-                return array.slice(0, i + 1)
-            }
-        }
-        return array.slice(0, i + 1)
+
     },
     isMatch: function isMatch(obj, src) {
         if (obj === src) {
@@ -194,12 +179,9 @@ var wayne18o = {
     },
     isEqual: function (val, other) {
         if (!Boolean(val) || !Boolean(other)) {
-            return true
+            return false
         }
-        // else if (!Boolean(val) || !Boolean(other)) {
-        //     return false
-        // }
-        //判断长度是否一样
+        // //判断长度是否一样
         if (Object.keys(val).length !== Object.keys(other).length) {
             return false
         }
