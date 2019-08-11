@@ -257,4 +257,10 @@ var wayne18o = {
         }
         return val
     },
+    fill: function (ary, val, start = 0, end = ary.length) {
+        for (let i = start; i < end; i++) {
+            ary[i] = val
+        }
+        return ary
+    }
 }
