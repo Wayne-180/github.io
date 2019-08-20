@@ -27,18 +27,19 @@
         <canvas width="420" height="630"></canvas>
     </div>
     <script>
-        var img = new Image()
-        img.src = "./bg.jpg"
         var x = 0, y = 0
+        var planeX = 190, planeY = 550
         var mycanvas = document.querySelector("canvas").getContext("2d")
-        img.onload = function () {
-            return setInterval(draw, 10)
+        window.onload = function () {
+            return setInterval(draw, 1)
         }
         function draw() {
             background()
             plane()
         }
         function background() {
+            var img = new Image()
+            img.src = "./bg.jpg"
             mycanvas.drawImage(img, x, y)
             mycanvas.drawImage(img, x, y - 600)
             if (y > 600) {
@@ -47,7 +48,17 @@
             y += 1
         }
         function plane() {
+            var img = new Image()
+            img.src = './myplane.png'
+            mycanvas.drawImage(img, planeX, planeY)
+            window.addEventListener('keyup', e => {
+                console.log(e.keyCode);
+                if (e.keyCode = 87) {
+                    console.log(planeY);
+                    planeY -= 1
+                }
 
+            })
         }
     </script>
 </body>
