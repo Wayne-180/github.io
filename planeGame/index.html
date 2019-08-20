@@ -28,14 +28,36 @@
     </div>
     <script>
         var x = 0, y = 0
-        var planeX = 190, planeY = 550
+        var px = 190, py = 550
         var mycanvas = document.querySelector("canvas").getContext("2d")
         window.onload = function () {
-            return setInterval(draw, 1)
+            action()
+            return setInterval(draw, 10)
         }
         function draw() {
             background()
             plane()
+            // bullet()
+        }
+        function action() {
+            window.addEventListener('keydown', e => {
+                console.log(e.keyCode);
+                if (e.keyCode == 87) {
+                    py -= 3
+                }
+                if (e.keyCode == 83) {
+                    py += 3
+                }
+                if (e.keyCode == 65) {
+                    px -= 3
+                }
+                if (e.keyCode == 68) {
+                    px += 3
+                }
+                if (e.keyCode == 74) {
+
+                }
+            })
         }
         function background() {
             var img = new Image()
@@ -50,16 +72,14 @@
         function plane() {
             var img = new Image()
             img.src = './myplane.png'
-            mycanvas.drawImage(img, planeX, planeY)
-            window.addEventListener('keyup', e => {
-                console.log(e.keyCode);
-                if (e.keyCode = 87) {
-                    console.log(planeY);
-                    planeY -= 1
-                }
-
-            })
+            mycanvas.drawImage(img, px, py)
         }
+        // function bullet() {
+        //     var img = new Image()
+        //     img.src=
+        //     mycanvas.drawImage(img,)
+        // }
+
     </script>
 </body>
 
