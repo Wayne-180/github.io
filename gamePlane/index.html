@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>打飞机</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .Ui {
+            padding: 0;
+            width: 420px;
+            height: 630px;
+            xbackground: url(./bg.jpg);
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="Ui">
+        <canvas width="420" height="630"></canvas>
+    </div>
+    <script>
+        var img = new Image()
+        img.src = "./bg.jpg"
+        var x = 0, y = 0
+        var mycanvas = document.querySelector("canvas").getContext("2d")
+        img.onload = function () {
+            return setInterval(draw, 10)
+        }
+        function draw() {
+            background()
+            plane()
+        }
+        function background() {
+            mycanvas.drawImage(img, x, y)
+            mycanvas.drawImage(img, x, y - 600)
+            if (y > 600) {
+                y = 0
+            }
+            y += 1
+        }
+        function plane() {
+
+        }
+    </script>
+</body>
+
+</html>
