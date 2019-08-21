@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas width="420px" height="630px"></canvas>
+    <script>
+        class Plane {
+            constructor(canvas2d) {
+                this.x = 190
+                this.y = 550
+                var img = new Image()
+                this.img = img
+                this.img.src = './myplane.png'
+                this.canvas2d = canvas2d
+            }
+            draw() {
+                this.canvas2d.drawImage(this.img, this.x, this.y)
+            }
+        }
+        var canvas2d = document.querySelector('canvas').getContext('2d')
+        var p = new Plane(canvas2d)
+        window.onload = ()=> {
+            //debugger;
+            return setInterval(p.draw(), 10)
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class PlaneGame {
+            constructor() {
+                this.canvas = document.createElement('canvas')
+                this.div = document.createElement('div')
+                this.div.style = `
+                width:420px;
+                height:630px;
+                margin:0 auto;
+                `
+                document.body.appendChild(this.div)
+                this.div.appendChild(this.canvas)
+                this.canvas2d = this.canvas.getContext('2d')
+                this.canvas.width = 420
+                this.canvas.height = 630
+                this.plane = new Plane(this.canvas2d)
+                this.background = new BackGround(this.canvas2d)
+                this.action()
+            }
+            play() {
+                this.background.draw()
+                this.plane.draw()
+            }
+            action() {
+                window.addEventListener('keydown', e => {
+                    if (e.keyCode == 87) {
+                        this.plane.y -= 3
+                    }
+                    if (e.keyCode == 83) {
+                        this.plane.y += 3
+                    }
+                    if (e.keyCode == 65) {
+                        this.plane.x -= 3
+                    }
+                    if (e.keyCode == 68) {
+                        this.plane.x += 3
+                    }
+                    console.log(e.keyCode);
+                    
+                    //if(e.keyCode)
+                })
+            }
+        }
+        class Plane {
+            constructor(canvas2d) {
+                this.x = 185
+                this.y = 550
+                var img = new Image()
+                this.img = img
+                this.img.src = './myplane.png'
+                this.canvas2d = canvas2d
+            }
+            draw() {
+                this.canvas2d.drawImage(this.img, this.x, this.y)
+
+                
+                this.action()
+            }
+            action() {
+                if (this.x < 0) {
+                    this.x = 0
+                }
+                if (this.x > 377) {
+                    this.x = 377
+                }
+                if (this.y > 598) {
+                    this.y=598
+                }
+                if (this.y < 0) {
+                    this.y=0
+                }
+
+            }
+        }
+        class BackGround {
+            constructor(canvas2d) {
+                this.x = 0
+                this.y = 0
+                var img = new Image()
+                this.img = img
+                this.img.src = "./bg.jpg"
+                this.canvas2d = canvas2d
+            }
+            draw() {
+                this.canvas2d.drawImage(this.img, this.x, this.y)
+                this.canvas2d.drawImage(this.img, this.x, this.y - 600)
+                if (this.y > 600) {
+                    this.y = 0
+                }
+                this.y += 1
+            }
+        }
+        var game = new PlaneGame()
+        window.onload = function () {
+            return setInterval('game.play()', 10)
+        }
+    </script>
+</body>
+
+</html>
