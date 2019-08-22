@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>planeGame</title>
+</head>
+
+<body>
+    <script>
+        class PlaneGame {
+            constructor() {
+                this.canvas = document.createElement('canvas')
+                this.canvas2d = this.canvas.getContext('2d')
+                this.div = document.createElement('div')
+                this.div.style = `
+                width:420px;
+                height:630px;
+                margin:0 auto;
+                `
+                document.body.appendChild(this.div)
+                this.div.appendChild(this.canvas)
+            }
+        }
+    </script>
+</body>
+
+</html>
