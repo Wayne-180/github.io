@@ -26,29 +26,39 @@
                 this.canvas.height = 630
                 this.plane = new Plane(this.canvas2d)
                 this.background = new BackGround(this.canvas2d)
-                this.action()
+                this.bullet = new Bullet(this.plane, this.canvas2d)
+                this.flightAction()
             }
             play() {
                 this.background.draw()
                 this.plane.draw()
+                this.bullet.draw()
             }
-            action() {
+            flightAction() {
+                var keyCode = {}
+                window.addEventListener('keyup', e => {
+                    keyCode[e.keyCode] = false
+                    delete keyCode[e.keyCode]                    
+                })
                 window.addEventListener('keydown', e => {
-                    if (e.keyCode == 87) {
-                        this.plane.y -= 3
+                    keyCode[e.keyCode] = true
+                    console.log(keyCode);
+                    for (var key in keyCode) {
+                        if (key == 87) {
+                            this.plane.y -= 3
+                        }
+                        if (key == 83) {
+                            this.plane.y += 3
+                        }
+                        if (key == 65) {
+                            this.plane.x -= 3
+                        }
+                        if (key == 68) {
+                            this.plane.x += 3
+                        }
+                        if (key == 74) {
+                        }
                     }
-                    if (e.keyCode == 83) {
-                        this.plane.y += 3
-                    }
-                    if (e.keyCode == 65) {
-                        this.plane.x -= 3
-                    }
-                    if (e.keyCode == 68) {
-                        this.plane.x += 3
-                    }
-                    console.log(e.keyCode);
-                    
-                    //if(e.keyCode)
                 })
             }
         }
@@ -63,8 +73,6 @@
             }
             draw() {
                 this.canvas2d.drawImage(this.img, this.x, this.y)
-
-                
                 this.action()
             }
             action() {
@@ -75,11 +83,14 @@
                     this.x = 377
                 }
                 if (this.y > 598) {
-                    this.y=598
+                    this.y = 598
                 }
                 if (this.y < 0) {
-                    this.y=0
+                    this.y = 0
                 }
+
+            }
+            shooting() {
 
             }
         }
@@ -99,6 +110,23 @@
                     this.y = 0
                 }
                 this.y += 1
+            }
+        }
+        class Bullet {
+            constructor(plane, canvas2d) {
+                this.x = plane.x + 16
+                this.y = plane.y - 10
+                var img = new Image()
+                this.img = img
+                this.img.src = './bullet.png'
+                this.canvas2d = canvas2d
+            }
+            draw() {
+                for (var i = 0; i < 10; i++) {
+                    this.canvas2d.drawImage(this.img, this.x, this.y)
+                    this.y--
+                }
+
             }
         }
         var game = new PlaneGame()
