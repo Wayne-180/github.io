@@ -29,18 +29,17 @@
                 this.plane = new Plane(this.canvas2d)
                 this.background = new BackGround(this.canvas2d)
                 this.enemyplane = new EnemyPlane(this.canvas2d)
-                
-                this.flightAction()
+                this.actionListener()
+                //debugger;
+                //this.drawEnemyPlane(5)
             }
+
             play() {
                 this.background.draw()
                 this.plane.draw()
-                this.enemyplane.draw()
-                for(var i=0;i<5;i++){
-                    
-                }
+                this.enemyplane.draw(5)
             }
-            flightAction() {
+            actionListener() {
                 var keyCode = {}
                 window.addEventListener('keyup', e => {
                     keyCode[e.keyCode] = false
@@ -50,16 +49,16 @@
                     keyCode[e.keyCode] = true
                     for (var key in keyCode) {
                         if (key == 87) {
-                            this.plane.y -= 2
+                            this.plane.y -= 3
                         }
                         if (key == 83) {
-                            this.plane.y += 2
+                            this.plane.y += 3
                         }
                         if (key == 65) {
-                            this.plane.x -= 2
+                            this.plane.x -= 3
                         }
                         if (key == 68) {
-                            this.plane.x += 2
+                            this.plane.x += 3
                         }
                         if (key == 74) {
 
@@ -75,9 +74,25 @@
                 this.img = new Image()
                 this.img.src = './myplane.png'
                 this.canvas2d = canvas2d
+
             }
             draw() {
                 this.canvas2d.drawImage(this.img, this.x, this.y)
+                this.boundary()
+            }
+            boundary() {
+                if (this.x < 0) {
+                    this.x = 0
+                }
+                if (this.x > 377) {
+                    this.x = 377
+                }
+                if (this.y > 598) {
+                    this.y = 598
+                }
+                if (this.y < 0) {
+                    this.y = 0
+                }
             }
         }
         class BackGround {
@@ -120,20 +135,23 @@
                 this.img = new Image()
                 this.img.src = 'enemy0' + Math.ceil(Math.random() * 6) + '.png'
             }
-            draw() {
-                this.canvas2d.drawImage(this.img, this.x, this.y)
+            draw(sum) {
+                for (let i = 0; i < sum; i++) {
+                    this.canvas2d.drawImage(this.img, this.x, this.y)
+                }
+
                 this.y++
             }
         }
 
         var game = new PlaneGame()
-        requestAnimationFrame(function a() {
-            game.play()
-            requestAnimationFrame(a)
-        })
-
-
-
+        // requestAnimationFrame(function a() {
+        //     game.play()
+        //     requestAnimationFrame(a)
+        // })
+        window.onload = function () {
+            return setInterval('game.play()', 10)
+        }
     </script>
 </body>
 
